@@ -1,0 +1,156 @@
+make.exe --dry-run --always-make --keep-going --print-directory
+make: Entering directory 'd:/Beeb/BeebQuake'
+mkdir -p .\quake
+C:/ProgramData/chocolatey/lib/make/tools/install/bin/make.exe targets
+ 
+make[1]: Entering directory 'd:/Beeb/BeebQuake'
+arm-none-eabi-gcc -DVIDULA -nostartfiles -O2 -mcpu=arm7tdmi -mtune=arm7tdmi -fno-delete-null-pointer-checks -fdata-sections -ffunction-sections --specs=nano.specs --specs=nosys.specs -u _printf_float -fno-short-enums -o quake/cl_demo.o -c cl_demo.c
+arm-none-eabi-gcc -DVIDULA -nostartfiles -O2 -mcpu=arm7tdmi -mtune=arm7tdmi -fno-delete-null-pointer-checks -fdata-sections -ffunction-sections --specs=nano.specs --specs=nosys.specs -u _printf_float -fno-short-enums -o quake/cl_input.o -c cl_input.c
+arm-none-eabi-gcc -DVIDULA -nostartfiles -O2 -mcpu=arm7tdmi -mtune=arm7tdmi -fno-delete-null-pointer-checks -fdata-sections -ffunction-sections --specs=nano.specs --specs=nosys.specs -u _printf_float -fno-short-enums -o quake/cl_main.o -c cl_main.c
+ 
+arm-none-eabi-gcc -DVIDULA -nostartfiles -O2 -mcpu=arm7tdmi -mtune=arm7tdmi -fno-delete-null-pointer-checks -fdata-sections -ffunction-sections --specs=nano.specs --specs=nosys.specs -u _printf_float -fno-short-enums -o quake/cl_parse.o -c cl_parse.c
+ 
+arm-none-eabi-gcc -DVIDULA -nostartfiles -O2 -mcpu=arm7tdmi -mtune=arm7tdmi -fno-delete-null-pointer-checks -fdata-sections -ffunction-sections --specs=nano.specs --specs=nosys.specs -u _printf_float -fno-short-enums -o quake/cl_tent.o -c cl_tent.c
+arm-none-eabi-gcc -DVIDULA -nostartfiles -O2 -mcpu=arm7tdmi -mtune=arm7tdmi -fno-delete-null-pointer-checks -fdata-sections -ffunction-sections --specs=nano.specs --specs=nosys.specs -u _printf_float -fno-short-enums -o quake/chase.o -c chase.c
+arm-none-eabi-gcc -DVIDULA -nostartfiles -O2 -mcpu=arm7tdmi -mtune=arm7tdmi -fno-delete-null-pointer-checks -fdata-sections -ffunction-sections --specs=nano.specs --specs=nosys.specs -u _printf_float -fno-short-enums -o quake/cmd.o -c cmd.c
+arm-none-eabi-gcc -DVIDULA -nostartfiles -O2 -mcpu=arm7tdmi -mtune=arm7tdmi -fno-delete-null-pointer-checks -fdata-sections -ffunction-sections --specs=nano.specs --specs=nosys.specs -u _printf_float -fno-short-enums -o quake/common.o -c common.c
+ 
+arm-none-eabi-gcc -DVIDULA -nostartfiles -O2 -mcpu=arm7tdmi -mtune=arm7tdmi -fno-delete-null-pointer-checks -fdata-sections -ffunction-sections --specs=nano.specs --specs=nosys.specs -u _printf_float -fno-short-enums -o quake/console.o -c console.c
+ 
+arm-none-eabi-gcc -DVIDULA -nostartfiles -O2 -mcpu=arm7tdmi -mtune=arm7tdmi -fno-delete-null-pointer-checks -fdata-sections -ffunction-sections --specs=nano.specs --specs=nosys.specs -u _printf_float -fno-short-enums -o quake/crc.o -c crc.c
+ 
+arm-none-eabi-gcc -DVIDULA -nostartfiles -O2 -mcpu=arm7tdmi -mtune=arm7tdmi -fno-delete-null-pointer-checks -fdata-sections -ffunction-sections --specs=nano.specs --specs=nosys.specs -u _printf_float -fno-short-enums -o quake/cvar.o -c cvar.c
+ 
+arm-none-eabi-gcc -DVIDULA -nostartfiles -O2 -mcpu=arm7tdmi -mtune=arm7tdmi -fno-delete-null-pointer-checks -fdata-sections -ffunction-sections --specs=nano.specs --specs=nosys.specs -u _printf_float -fno-short-enums -o quake/draw.o -c draw.c
+ 
+arm-none-eabi-gcc -DVIDULA -nostartfiles -O2 -mcpu=arm7tdmi -mtune=arm7tdmi -fno-delete-null-pointer-checks -fdata-sections -ffunction-sections --specs=nano.specs --specs=nosys.specs -u _printf_float -fno-short-enums -o quake/d_edge.o -c d_edge.c
+ 
+arm-none-eabi-gcc -DVIDULA -nostartfiles -O2 -mcpu=arm7tdmi -mtune=arm7tdmi -fno-delete-null-pointer-checks -fdata-sections -ffunction-sections --specs=nano.specs --specs=nosys.specs -u _printf_float -fno-short-enums -o quake/d_fill.o -c d_fill.c
+arm-none-eabi-gcc -DVIDULA -nostartfiles -O2 -mcpu=arm7tdmi -mtune=arm7tdmi -fno-delete-null-pointer-checks -fdata-sections -ffunction-sections --specs=nano.specs --specs=nosys.specs -u _printf_float -fno-short-enums -o quake/d_init.o -c d_init.c
+arm-none-eabi-gcc -DVIDULA -nostartfiles -O2 -mcpu=arm7tdmi -mtune=arm7tdmi -fno-delete-null-pointer-checks -fdata-sections -ffunction-sections --specs=nano.specs --specs=nosys.specs -u _printf_float -fno-short-enums -o quake/d_modech.o -c d_modech.c
+ 
+arm-none-eabi-gcc -DVIDULA -nostartfiles -O2 -mcpu=arm7tdmi -mtune=arm7tdmi -fno-delete-null-pointer-checks -fdata-sections -ffunction-sections --specs=nano.specs --specs=nosys.specs -u _printf_float -fno-short-enums -o quake/d_part.o -c d_part.c
+ 
+arm-none-eabi-gcc -DVIDULA -nostartfiles -O2 -mcpu=arm7tdmi -mtune=arm7tdmi -fno-delete-null-pointer-checks -fdata-sections -ffunction-sections --specs=nano.specs --specs=nosys.specs -u _printf_float -fno-short-enums -o quake/d_polyse.o -c d_polyse.c
+ 
+arm-none-eabi-gcc -DVIDULA -nostartfiles -O2 -mcpu=arm7tdmi -mtune=arm7tdmi -fno-delete-null-pointer-checks -fdata-sections -ffunction-sections --specs=nano.specs --specs=nosys.specs -u _printf_float -fno-short-enums -o quake/d_scan.o -c d_scan.c
+ 
+arm-none-eabi-gcc -DVIDULA -nostartfiles -O2 -mcpu=arm7tdmi -mtune=arm7tdmi -fno-delete-null-pointer-checks -fdata-sections -ffunction-sections --specs=nano.specs --specs=nosys.specs -u _printf_float -fno-short-enums -o quake/d_sky.o -c d_sky.c
+ 
+arm-none-eabi-gcc -DVIDULA -nostartfiles -O2 -mcpu=arm7tdmi -mtune=arm7tdmi -fno-delete-null-pointer-checks -fdata-sections -ffunction-sections --specs=nano.specs --specs=nosys.specs -u _printf_float -fno-short-enums -o quake/d_sprite.o -c d_sprite.c
+ 
+arm-none-eabi-gcc -DVIDULA -nostartfiles -O2 -mcpu=arm7tdmi -mtune=arm7tdmi -fno-delete-null-pointer-checks -fdata-sections -ffunction-sections --specs=nano.specs --specs=nosys.specs -u _printf_float -fno-short-enums -o quake/d_surf.o -c d_surf.c
+ 
+arm-none-eabi-gcc -DVIDULA -nostartfiles -O2 -mcpu=arm7tdmi -mtune=arm7tdmi -fno-delete-null-pointer-checks -fdata-sections -ffunction-sections --specs=nano.specs --specs=nosys.specs -u _printf_float -fno-short-enums -o quake/d_vars.o -c d_vars.c
+ 
+arm-none-eabi-gcc -DVIDULA -nostartfiles -O2 -mcpu=arm7tdmi -mtune=arm7tdmi -fno-delete-null-pointer-checks -fdata-sections -ffunction-sections --specs=nano.specs --specs=nosys.specs -u _printf_float -fno-short-enums -o quake/d_zpoint.o -c d_zpoint.c
+ 
+arm-none-eabi-gcc -DVIDULA -nostartfiles -O2 -mcpu=arm7tdmi -mtune=arm7tdmi -fno-delete-null-pointer-checks -fdata-sections -ffunction-sections --specs=nano.specs --specs=nosys.specs -u _printf_float -fno-short-enums -o quake/host.o -c host.c
+ 
+arm-none-eabi-gcc -DVIDULA -nostartfiles -O2 -mcpu=arm7tdmi -mtune=arm7tdmi -fno-delete-null-pointer-checks -fdata-sections -ffunction-sections --specs=nano.specs --specs=nosys.specs -u _printf_float -fno-short-enums -o quake/host_cmd.o -c host_cmd.c
+ 
+arm-none-eabi-gcc -DVIDULA -nostartfiles -O2 -mcpu=arm7tdmi -mtune=arm7tdmi -fno-delete-null-pointer-checks -fdata-sections -ffunction-sections --specs=nano.specs --specs=nosys.specs -u _printf_float -fno-short-enums -o quake/keys.o -c keys.c
+ 
+arm-none-eabi-gcc -DVIDULA -nostartfiles -O2 -mcpu=arm7tdmi -mtune=arm7tdmi -fno-delete-null-pointer-checks -fdata-sections -ffunction-sections --specs=nano.specs --specs=nosys.specs -u _printf_float -fno-short-enums -o quake/menu.o -c menu.c
+ 
+arm-none-eabi-gcc -DVIDULA -nostartfiles -O2 -mcpu=arm7tdmi -mtune=arm7tdmi -fno-delete-null-pointer-checks -fdata-sections -ffunction-sections --specs=nano.specs --specs=nosys.specs -u _printf_float -fno-short-enums -o quake/mathlib.o -c mathlib.c
+ 
+arm-none-eabi-gcc -DVIDULA -nostartfiles -O2 -mcpu=arm7tdmi -mtune=arm7tdmi -fno-delete-null-pointer-checks -fdata-sections -ffunction-sections --specs=nano.specs --specs=nosys.specs -u _printf_float -fno-short-enums -o quake/model.o -c model.c
+ 
+arm-none-eabi-gcc -DVIDULA -nostartfiles -O2 -mcpu=arm7tdmi -mtune=arm7tdmi -fno-delete-null-pointer-checks -fdata-sections -ffunction-sections --specs=nano.specs --specs=nosys.specs -u _printf_float -fno-short-enums -o quake/net_loop.o -c net_loop.c
+ 
+arm-none-eabi-gcc -DVIDULA -nostartfiles -O2 -mcpu=arm7tdmi -mtune=arm7tdmi -fno-delete-null-pointer-checks -fdata-sections -ffunction-sections --specs=nano.specs --specs=nosys.specs -u _printf_float -fno-short-enums -o quake/net_main.o -c net_main.c
+ 
+arm-none-eabi-gcc -DVIDULA -nostartfiles -O2 -mcpu=arm7tdmi -mtune=arm7tdmi -fno-delete-null-pointer-checks -fdata-sections -ffunction-sections --specs=nano.specs --specs=nosys.specs -u _printf_float -fno-short-enums -o quake/net_vcr.o -c net_vcr.c
+ 
+arm-none-eabi-gcc -DVIDULA -nostartfiles -O2 -mcpu=arm7tdmi -mtune=arm7tdmi -fno-delete-null-pointer-checks -fdata-sections -ffunction-sections --specs=nano.specs --specs=nosys.specs -u _printf_float -fno-short-enums -o quake/net_none.o -c net_none.c
+ 
+arm-none-eabi-gcc -DVIDULA -nostartfiles -O2 -mcpu=arm7tdmi -mtune=arm7tdmi -fno-delete-null-pointer-checks -fdata-sections -ffunction-sections --specs=nano.specs --specs=nosys.specs -u _printf_float -fno-short-enums -o quake/nonintel.o -c nonintel.c
+ 
+arm-none-eabi-gcc -DVIDULA -nostartfiles -O2 -mcpu=arm7tdmi -mtune=arm7tdmi -fno-delete-null-pointer-checks -fdata-sections -ffunction-sections --specs=nano.specs --specs=nosys.specs -u _printf_float -fno-short-enums -o quake/pr_cmds.o -c pr_cmds.c
+ 
+arm-none-eabi-gcc -DVIDULA -nostartfiles -O2 -mcpu=arm7tdmi -mtune=arm7tdmi -fno-delete-null-pointer-checks -fdata-sections -ffunction-sections --specs=nano.specs --specs=nosys.specs -u _printf_float -fno-short-enums -o quake/pr_edict.o -c pr_edict.c
+ 
+arm-none-eabi-gcc -DVIDULA -nostartfiles -O2 -mcpu=arm7tdmi -mtune=arm7tdmi -fno-delete-null-pointer-checks -fdata-sections -ffunction-sections --specs=nano.specs --specs=nosys.specs -u _printf_float -fno-short-enums -o quake/pr_exec.o -c pr_exec.c
+ 
+arm-none-eabi-gcc -DVIDULA -nostartfiles -O2 -mcpu=arm7tdmi -mtune=arm7tdmi -fno-delete-null-pointer-checks -fdata-sections -ffunction-sections --specs=nano.specs --specs=nosys.specs -u _printf_float -fno-short-enums -o quake/r_aclip.o -c r_aclip.c
+ 
+arm-none-eabi-gcc -DVIDULA -nostartfiles -O2 -mcpu=arm7tdmi -mtune=arm7tdmi -fno-delete-null-pointer-checks -fdata-sections -ffunction-sections --specs=nano.specs --specs=nosys.specs -u _printf_float -fno-short-enums -o quake/r_alias.o -c r_alias.c
+ 
+arm-none-eabi-gcc -DVIDULA -nostartfiles -O2 -mcpu=arm7tdmi -mtune=arm7tdmi -fno-delete-null-pointer-checks -fdata-sections -ffunction-sections --specs=nano.specs --specs=nosys.specs -u _printf_float -fno-short-enums -o quake/r_bsp.o -c r_bsp.c
+ 
+arm-none-eabi-gcc -DVIDULA -nostartfiles -O2 -mcpu=arm7tdmi -mtune=arm7tdmi -fno-delete-null-pointer-checks -fdata-sections -ffunction-sections --specs=nano.specs --specs=nosys.specs -u _printf_float -fno-short-enums -o quake/r_light.o -c r_light.c
+ 
+arm-none-eabi-gcc -DVIDULA -nostartfiles -O2 -mcpu=arm7tdmi -mtune=arm7tdmi -fno-delete-null-pointer-checks -fdata-sections -ffunction-sections --specs=nano.specs --specs=nosys.specs -u _printf_float -fno-short-enums -o quake/r_draw.o -c r_draw.c
+ 
+arm-none-eabi-gcc -DVIDULA -nostartfiles -O2 -mcpu=arm7tdmi -mtune=arm7tdmi -fno-delete-null-pointer-checks -fdata-sections -ffunction-sections --specs=nano.specs --specs=nosys.specs -u _printf_float -fno-short-enums -o quake/r_efrag.o -c r_efrag.c
+ 
+arm-none-eabi-gcc -DVIDULA -nostartfiles -O2 -mcpu=arm7tdmi -mtune=arm7tdmi -fno-delete-null-pointer-checks -fdata-sections -ffunction-sections --specs=nano.specs --specs=nosys.specs -u _printf_float -fno-short-enums -o quake/r_edge.o -c r_edge.c
+ 
+arm-none-eabi-gcc -DVIDULA -nostartfiles -O2 -mcpu=arm7tdmi -mtune=arm7tdmi -fno-delete-null-pointer-checks -fdata-sections -ffunction-sections --specs=nano.specs --specs=nosys.specs -u _printf_float -fno-short-enums -o quake/r_misc.o -c r_misc.c
+ 
+arm-none-eabi-gcc -DVIDULA -nostartfiles -O2 -mcpu=arm7tdmi -mtune=arm7tdmi -fno-delete-null-pointer-checks -fdata-sections -ffunction-sections --specs=nano.specs --specs=nosys.specs -u _printf_float -fno-short-enums -o quake/r_main.o -c r_main.c
+ 
+arm-none-eabi-gcc -DVIDULA -nostartfiles -O2 -mcpu=arm7tdmi -mtune=arm7tdmi -fno-delete-null-pointer-checks -fdata-sections -ffunction-sections --specs=nano.specs --specs=nosys.specs -u _printf_float -fno-short-enums -o quake/r_sky.o -c r_sky.c
+ 
+arm-none-eabi-gcc -DVIDULA -nostartfiles -O2 -mcpu=arm7tdmi -mtune=arm7tdmi -fno-delete-null-pointer-checks -fdata-sections -ffunction-sections --specs=nano.specs --specs=nosys.specs -u _printf_float -fno-short-enums -o quake/r_sprite.o -c r_sprite.c
+ 
+arm-none-eabi-gcc -DVIDULA -nostartfiles -O2 -mcpu=arm7tdmi -mtune=arm7tdmi -fno-delete-null-pointer-checks -fdata-sections -ffunction-sections --specs=nano.specs --specs=nosys.specs -u _printf_float -fno-short-enums -o quake/r_surf.o -c r_surf.c
+ 
+arm-none-eabi-gcc -DVIDULA -nostartfiles -O2 -mcpu=arm7tdmi -mtune=arm7tdmi -fno-delete-null-pointer-checks -fdata-sections -ffunction-sections --specs=nano.specs --specs=nosys.specs -u _printf_float -fno-short-enums -o quake/r_part.o -c r_part.c
+ 
+arm-none-eabi-gcc -DVIDULA -nostartfiles -O2 -mcpu=arm7tdmi -mtune=arm7tdmi -fno-delete-null-pointer-checks -fdata-sections -ffunction-sections --specs=nano.specs --specs=nosys.specs -u _printf_float -fno-short-enums -o quake/r_vars.o -c r_vars.c
+ 
+arm-none-eabi-gcc -DVIDULA -nostartfiles -O2 -mcpu=arm7tdmi -mtune=arm7tdmi -fno-delete-null-pointer-checks -fdata-sections -ffunction-sections --specs=nano.specs --specs=nosys.specs -u _printf_float -fno-short-enums -o quake/screen.o -c screen.c
+ 
+arm-none-eabi-gcc -DVIDULA -nostartfiles -O2 -mcpu=arm7tdmi -mtune=arm7tdmi -fno-delete-null-pointer-checks -fdata-sections -ffunction-sections --specs=nano.specs --specs=nosys.specs -u _printf_float -fno-short-enums -o quake/sbar.o -c sbar.c
+ 
+arm-none-eabi-gcc -DVIDULA -nostartfiles -O2 -mcpu=arm7tdmi -mtune=arm7tdmi -fno-delete-null-pointer-checks -fdata-sections -ffunction-sections --specs=nano.specs --specs=nosys.specs -u _printf_float -fno-short-enums -o quake/sv_main.o -c sv_main.c
+ 
+arm-none-eabi-gcc -DVIDULA -nostartfiles -O2 -mcpu=arm7tdmi -mtune=arm7tdmi -fno-delete-null-pointer-checks -fdata-sections -ffunction-sections --specs=nano.specs --specs=nosys.specs -u _printf_float -fno-short-enums -o quake/sv_phys.o -c sv_phys.c
+ 
+arm-none-eabi-gcc -DVIDULA -nostartfiles -O2 -mcpu=arm7tdmi -mtune=arm7tdmi -fno-delete-null-pointer-checks -fdata-sections -ffunction-sections --specs=nano.specs --specs=nosys.specs -u _printf_float -fno-short-enums -o quake/sv_move.o -c sv_move.c
+ 
+arm-none-eabi-gcc -DVIDULA -nostartfiles -O2 -mcpu=arm7tdmi -mtune=arm7tdmi -fno-delete-null-pointer-checks -fdata-sections -ffunction-sections --specs=nano.specs --specs=nosys.specs -u _printf_float -fno-short-enums -o quake/sv_user.o -c sv_user.c
+ 
+arm-none-eabi-gcc -DVIDULA -nostartfiles -O2 -mcpu=arm7tdmi -mtune=arm7tdmi -fno-delete-null-pointer-checks -fdata-sections -ffunction-sections --specs=nano.specs --specs=nosys.specs -u _printf_float -fno-short-enums -o quake/zone.o -c zone.c
+ 
+arm-none-eabi-gcc -DVIDULA -nostartfiles -O2 -mcpu=arm7tdmi -mtune=arm7tdmi -fno-delete-null-pointer-checks -fdata-sections -ffunction-sections --specs=nano.specs --specs=nosys.specs -u _printf_float -fno-short-enums -o quake/view.o -c view.c
+ 
+arm-none-eabi-gcc -DVIDULA -nostartfiles -O2 -mcpu=arm7tdmi -mtune=arm7tdmi -fno-delete-null-pointer-checks -fdata-sections -ffunction-sections --specs=nano.specs --specs=nosys.specs -u _printf_float -fno-short-enums -o quake/wad.o -c wad.c
+ 
+arm-none-eabi-gcc -DVIDULA -nostartfiles -O2 -mcpu=arm7tdmi -mtune=arm7tdmi -fno-delete-null-pointer-checks -fdata-sections -ffunction-sections --specs=nano.specs --specs=nosys.specs -u _printf_float -fno-short-enums -o quake/world.o -c world.c
+ 
+arm-none-eabi-gcc -DVIDULA -nostartfiles -O2 -mcpu=arm7tdmi -mtune=arm7tdmi -fno-delete-null-pointer-checks -fdata-sections -ffunction-sections --specs=nano.specs --specs=nosys.specs -u _printf_float -fno-short-enums -o quake/cd_null.o -c cd_null.c
+ 
+arm-none-eabi-gcc -DVIDULA -nostartfiles -O2 -mcpu=arm7tdmi -mtune=arm7tdmi -fno-delete-null-pointer-checks -fdata-sections -ffunction-sections --specs=nano.specs --specs=nosys.specs -u _printf_float -fno-short-enums -o quake/sys_beeb.o -c sys_beeb.c
+ 
+arm-none-eabi-gcc -DVIDULA -nostartfiles -O2 -mcpu=arm7tdmi -mtune=arm7tdmi -fno-delete-null-pointer-checks -fdata-sections -ffunction-sections --specs=nano.specs --specs=nosys.specs -u _printf_float -fno-short-enums -o quake/vid_beeb.o -c vid_beeb.c
+ 
+arm-none-eabi-gcc -DVIDULA -nostartfiles -O2 -mcpu=arm7tdmi -mtune=arm7tdmi -fno-delete-null-pointer-checks -fdata-sections -ffunction-sections --specs=nano.specs --specs=nosys.specs -u _printf_float -fno-short-enums -o quake/snd_mem.o -c snd_mem.c
+ 
+arm-none-eabi-gcc -DVIDULA -nostartfiles -O2 -mcpu=arm7tdmi -mtune=arm7tdmi -fno-delete-null-pointer-checks -fdata-sections -ffunction-sections --specs=nano.specs --specs=nosys.specs -u _printf_float -fno-short-enums -o quake/snd_mix.o -c snd_mix.c
+ 
+arm-none-eabi-gcc -DVIDULA -nostartfiles -O2 -mcpu=arm7tdmi -mtune=arm7tdmi -fno-delete-null-pointer-checks -fdata-sections -ffunction-sections --specs=nano.specs --specs=nosys.specs -u _printf_float -fno-short-enums -o quake/snd_null.o -c snd_null.c
+ 
+arm-none-eabi-gcc -DVIDULA -nostartfiles -O2 -mcpu=arm7tdmi -mtune=arm7tdmi -fno-delete-null-pointer-checks -fdata-sections -ffunction-sections --specs=nano.specs --specs=nosys.specs -u _printf_float -fno-short-enums -o quake/in_beeb.o -c in_beeb.c
+ 
+arm-none-eabi-gcc    -c -o armc-start.o armc-start.S
+ 
+arm-none-eabi-gcc -DVIDULA -nostartfiles -O2 -mcpu=arm7tdmi -mtune=arm7tdmi -fno-delete-null-pointer-checks -fdata-sections -ffunction-sections --specs=nano.specs --specs=nosys.specs -u _printf_float -fno-short-enums -c armtubeio.c -o armtubeio.o
+ 
+arm-none-eabi-gcc -DVIDULA -nostartfiles -O2 -mcpu=arm7tdmi -mtune=arm7tdmi -fno-delete-null-pointer-checks -fdata-sections -ffunction-sections --specs=nano.specs --specs=nosys.specs -u _printf_float -fno-short-enums -c armtubeswis.s -o armtubeswis.o
+ 
+cd beebScreen; ./mkasm.bat
+ 
+arm-none-eabi-gcc -DVIDULA -nostartfiles -O2 -mcpu=arm7tdmi -mtune=arm7tdmi -fno-delete-null-pointer-checks -fdata-sections -ffunction-sections --specs=nano.specs --specs=nosys.specs -u _printf_float -fno-short-enums -c beebScreen/beebScreen.c -o beebScreen/beebScreen.o
+ 
+arm-none-eabi-gcc -DVIDULA -nostartfiles -O2 -mcpu=arm7tdmi -mtune=arm7tdmi -fno-delete-null-pointer-checks -fdata-sections -ffunction-sections --specs=nano.specs --specs=nosys.specs -u _printf_float -fno-short-enums -c audio.c -o audio.o
+ 
+arm-none-eabi-gcc -DVIDULA -nostartfiles -O2 -mcpu=arm7tdmi -mtune=arm7tdmi -fno-delete-null-pointer-checks -fdata-sections -ffunction-sections --specs=nano.specs --specs=nosys.specs -u _printf_float -fno-short-enums -o temp ./quake/cl_demo.o ./quake/cl_input.o ./quake/cl_main.o ./quake/cl_parse.o ./quake/cl_tent.o ./quake/chase.o ./quake/cmd.o ./quake/common.o ./quake/console.o ./quake/crc.o ./quake/cvar.o ./quake/draw.o ./quake/d_edge.o ./quake/d_fill.o ./quake/d_init.o ./quake/d_modech.o ./quake/d_part.o ./quake/d_polyse.o ./quake/d_scan.o ./quake/d_sky.o ./quake/d_sprite.o ./quake/d_surf.o ./quake/d_vars.o ./quake/d_zpoint.o ./quake/host.o ./quake/host_cmd.o ./quake/keys.o ./quake/menu.o ./quake/mathlib.o ./quake/model.o ./quake/net_loop.o ./quake/net_main.o ./quake/net_vcr.o ./quake/net_none.o ./quake/nonintel.o ./quake/pr_cmds.o ./quake/pr_edict.o ./quake/pr_exec.o ./quake/r_aclip.o ./quake/r_alias.o ./quake/r_bsp.o ./quake/r_light.o ./quake/r_draw.o ./quake/r_efrag.o ./quake/r_edge.o ./quake/r_misc.o ./quake/r_main.o ./quake/r_sky.o ./quake/r_sprite.o ./quake/r_surf.o ./quake/r_part.o ./quake/r_vars.o ./quake/screen.o ./quake/sbar.o ./quake/sv_main.o ./quake/sv_phys.o ./quake/sv_move.o ./quake/sv_user.o ./quake/zone.o ./quake/view.o ./quake/wad.o ./quake/world.o ./quake/cd_null.o ./quake/sys_beeb.o ./quake/vid_beeb.o ./quake/snd_mem.o ./quake/snd_mix.o ./quake/snd_null.o ./quake/in_beeb.o armc-start.o armtubeio.o armtubeswis.o beebScreen/beebScreen.o audio.o -Wl,--gc-sections -Wl,--no-print-gc-sections -Wl,-T,rpi.X -Wl,-lm -Wl,-no-enum-size-warning
+arm-none-eabi-objcopy -O binary temp bquake
+rm temp
+make[1]: Leaving directory 'd:/Beeb/BeebQuake'
+ 
+make: Leaving directory 'd:/Beeb/BeebQuake'
+ 

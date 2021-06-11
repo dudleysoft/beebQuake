@@ -1,0 +1,8 @@
+{
+    "makefile.extensionOutputFolder": "./.vscode",
+    "files.associations": {
+        "d_local.h": "c",
+        "r_local.h": "c",
+        "quakedef.h": "c"
+    }
+}

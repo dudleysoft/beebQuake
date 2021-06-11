@@ -1,0 +1,1476 @@
+make.exe all --print-data-base --no-builtin-variables --no-builtin-rules --question
+# GNU Make 4.3
+# Built for Windows32
+# Copyright (C) 1988-2020 Free Software Foundation, Inc.
+# License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+# This is free software: you are free to change and redistribute it.
+# There is NO WARRANTY, to the extent permitted by law.
+ 
+
+# Make data base, printed on Thu Jun 10 20:48:05 2021
+
+# Variables
+
+# environment
+SYSTEMDRIVE = C:
+# environment
+LC_ALL = C
+# environment
+OCULUSBASE = C:\Program Files\Oculus\
+# environment
+USERPROFILE = C:\Users\dudle
+# environment
+LOCALAPPDATA = C:\Users\dudle\AppData\Local
+# environment
+VSCODE_IPC_HOOK_EXTHOST = \\.\pipe\vscode-ipc-77749e62-86f6-4cf8-97b6-f2aaa1ef376c-sock
+# environment
+VSCODE_CWD = C:\Users\dudle\AppData\Local\Programs\Microsoft VS Code
+# environment
+CHOCOLATEYINSTALL = C:\ProgramData\chocolatey
+# environment
+SYSTEMROOT = C:\Windows
+# environment
+PROCESSOR_LEVEL = 23
+# environment
+PSMODULEPATH = C:\Program Files\WindowsPowerShell\Modules;C:\Windows\system32\WindowsPowerShell\v1.0\Modules
+# default
+MAKE_COMMAND := C:/ProgramData/chocolatey/lib/make/tools/install/bin/make.exe
+# automatic
+@D = $(patsubst %/,%,$(patsubst %\,%,$(dir $@)))
+# makefile (from 'Makefile', line 22)
+DO_DEBUG_CC = $(CC) $(CFLAGS) -o $@ -c $<
+# environment
+CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_15968_TGXEIKFOGUNZMLSW
+# environment
+VSCODE_HANDLES_UNCAUGHT_ERRORS = true
+# default
+.VARIABLES := 
+# automatic
+%D = $(patsubst %/,%,$(patsubst %\,%,$(dir $%)))
+# makefile (from 'Makefile', line 21)
+DO_CC = $(CC) $(CFLAGS) -o $@ -c $<
+# automatic
+^D = $(patsubst %/,%,$(patsubst %\,%,$(dir $^)))
+# environment
+VSCODE_LOG_STACK = false
+# automatic
+%F = $(notdir $%)
+# environment
+LANG = C
+# default
+.LOADED := 
+# environment
+TMP = C:\Users\dudle\AppData\Local\Temp
+# default
+.INCLUDE_DIRS = .
+# environment
+PROCESSOR_ARCHITEW6432 = AMD64
+# makefile
+MAKEFLAGS = pqrR
+# environment
+ONEDRIVE = C:\Users\dudle\OneDrive
+# makefile
+CURDIR := d:/Beeb/BeebQuake
+# environment
+VSCODE_PIPE_LOGGING = true
+# environment
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
+# automatic
+*D = $(patsubst %/,%,$(patsubst %\,%,$(dir $*)))
+# environment
+PROGRAMFILES = C:\Program Files (x86)
+# environment
+MFLAGS = -pqrR
+# default
+.SHELLFLAGS := -c
+# environment
+COMMONPROGRAMW6432 = C:\Program Files\Common Files
+# automatic
++D = $(patsubst %/,%,$(patsubst %\,%,$(dir $+)))
+# makefile (from 'Makefile', line 1)
+MAKEFILE_LIST := Makefile
+# automatic
+@F = $(notdir $@)
+# environment
+VSCODE_VERBOSE_LOGGING = true
+# environment
+VSCODE_PID = 15968
+# automatic
+?D = $(patsubst %/,%,$(patsubst %\,%,$(dir $?)))
+# automatic
+*F = $(notdir $*)
+# automatic
+<D = $(patsubst %/,%,$(patsubst %\,%,$(dir $<)))
+# environment
+VSCODE_NLS_CONFIG = {"locale":"en-gb","availableLanguages":{},"_languagePackSupport":true}
+# environment
+ONEDRIVECONSUMER = C:\Users\dudle\OneDrive
+# default
+MAKE_HOST := Windows32
+# environment
+PROGRAMDATA = C:\ProgramData
+# default
+SHELL := C:/Program Files/Git/usr/bin/sh.exe
+# environment
+HOMEPATH = \Users\dudle
+# default
+MAKECMDGOALS := all
+# environment
+DRIVERDATA = C:\Windows\System32\Drivers\DriverData
+# environment
+COMSPEC = C:\Windows\system32\cmd.exe
+# environment
+PICO_SDK_PATH = D:\projects\pico-sdk
+# environment
+WINDIR = C:\Windows
+# environment
+MAKELEVEL := 0
+# default
+MAKE = $(MAKE_COMMAND)
+# environment
+PATH = C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files\ImageMagick-7.0.10-Q16-HDRI;C:\Program Files\Oculus\Support\oculus-runtime;C:\Python39\Scripts\;C:\Python39\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\ProgramData\chocolatey\bin;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\nodejs\;c:\cygwin64\bin;C:\Program Files\Git\cmd;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Program Files\CodeAndWeb\TexturePacker\bin;C:\Program Files (x86)\QuickTime\QTSystem\;C:\Program Files\CMake\bin;C:\Program Files\Git LFS;C:\Program Files\PuTTY\;C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2020-q4-major\bin;C:\Users\dudle\AppData\Local\Microsoft\WindowsApps;C:\Users\dudle\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\dudle\AppData\Roaming\npm;D:\gbdk\bin;D:\Beeb\vbcc\bin;
+# environment
+COMPUTERNAME = DESKTOP-5ATHJNK
+# default
+MAKEFILES := 
+# automatic
+^F = $(notdir $^)
+# environment
+PROMPT = $P$G
+# environment
+CHOCOLATEYLASTPATHUPDATE = 132597662206590976
+# makefile (from 'Makefile', line 113)
+BEEB_OBJS = armc-start.o armtubeio.o armtubeswis.o beebScreen/beebScreen.o audio.o
+# environment
+LOGONSERVER = \\DESKTOP-5ATHJNK
+# environment
+VSCODE_LOG_NATIVE = false
+# environment
+USERNAME = dudle
+# environment
+COMMONPROGRAMFILES = C:\Program Files (x86)\Common Files
+# automatic
+?F = $(notdir $?)
+# environment
+PROGRAMW6432 = C:\Program Files
+# environment
+PATHEXT = .COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.PY;.PYW
+# automatic
++F = $(notdir $+)
+# environment
+ORIGINAL_XDG_CURRENT_DESKTOP = undefined
+# environment
+USERDOMAIN = DESKTOP-5ATHJNK
+# 'override' directive
+GNUMAKEFLAGS := 
+# environment
+GIT_LFS_PATH = C:\Program Files\Git LFS
+# environment
+OS = Windows_NT
+# makefile
+.DEFAULT_GOAL := build_release
+# makefile (from 'Makefile', line 15)
+RM = rm
+# default
+MAKE_VERSION := 4.3
+# environment
+VBCC = D:\Beeb\vbcc
+# makefile (from 'Makefile', line 10)
+MOUNT_DIR = .
+# environment
+PROGRAMFILES(X86) = C:\Program Files (x86)
+# makefile (from 'Makefile', line 19)
+LDFLAGS := -Wl,--gc-sections -Wl,--no-print-gc-sections -Wl,-T,rpi.X -Wl,-lm -Wl,-no-enum-size-warning
+# environment
+USERDOMAIN_ROAMINGPROFILE = DESKTOP-5ATHJNK
+# environment
+NUMBER_OF_PROCESSORS = 12
+# makefile (from 'Makefile', line 28)
+TARGETS = bquake
+# environment
+PUBLIC = C:\Users\Public
+# environment
+VSCODE_NODE_CACHED_DATA_DIR = C:\Users\dudle\AppData\Roaming\Code\CachedData\b4c1bd0a9b03c749ea011b06c6d2676c8091a70c
+# environment
+ZGB_PATH = d:\ZGB_master\common
+# environment
+APPDATA = C:\Users\dudle\AppData\Roaming
+# makefile (from 'Makefile', line 18)
+CFLAGS := -DVIDULA -nostartfiles -O2 -mcpu=arm7tdmi -mtune=arm7tdmi -fno-delete-null-pointer-checks -fdata-sections -ffunction-sections --specs=nano.specs --specs=nosys.specs -u _printf_float -fno-short-enums
+# environment
+HOMEDRIVE = C:
+# environment
+PROCESSOR_ARCHITECTURE = x86
+# environment
+VSCODE_AMD_ENTRYPOINT = vs/workbench/services/extensi 
+ons/node/extensionHostProcess
+# environment
+COMMONPROGRAMFILES(X86) = C:\Program Files (x86)\Common Files
+# makefile (from 'Makefile', line 42)
+QUAKE_OBJS = $(BUILDDIR)/quake/cl_demo.o $(BUILDDIR)/quake/cl_input.o $(BUILDDIR)/quake/cl_main.o $(BUILDDIR)/quake/cl_parse.o $(BUILDDIR)/quake/cl_tent.o $(BUILDDIR)/quake/chase.o $(BUILDDIR)/quake/cmd.o $(BUILDDIR)/quake/common.o $(BUILDDIR)/quake/console.o $(BUILDDIR)/quake/crc.o $(BUILDDIR)/quake/cvar.o $(BUILDDIR)/quake/draw.o $(BUILDDIR)/quake/d_edge.o $(BUILDDIR)/quake/d_fill.o $(BUILDDIR)/quake/d_init.o $(BUILDDIR)/quake/d_modech.o $(BUILDDIR)/quake/d_part.o $(BUILDDIR)/quake/d_polyse.o $(BUILDDIR)/quake/d_scan.o $(BUILDDIR)/quake/d_sky.o $(BUILDDIR)/quake/d_sprite.o $(BUILDDIR)/quake/d_surf.o $(BUILDDIR)/quake/d_vars.o $(BUILDDIR)/quake/d_zpoint.o $(BUILDDIR)/quake/host.o $(BUILDDIR)/quake/host_cmd.o $(BUILDDIR)/quake/keys.o $(BUILDDIR)/quake/menu.o $(BUILDDIR)/quake/mathlib.o $(BUILDDIR)/quake/model.o $(BUILDDIR)/quake/net_loop.o $(BUILDDIR)/quake/net_main.o $(BUILDDIR)/quake/net_vcr.o $(BUILDDIR)/quake/net_none.o $(BUILDDIR)/quake/nonintel.o $(BUILDDIR)/quake/pr_cmds.o $(BUILDDIR)/quake/pr_edict.o $(BUILDDIR)/quake/pr_exec.o $(BUILDDIR)/quake/r_aclip.o $(BUILDDIR)/quake/r_alias.o $(BUILDDIR)/quake/r_bsp.o $(BUILDDIR)/quake/r_light.o $(BUILDDIR)/quake/r_draw.o $(BUILDDIR)/quake/r_efrag.o $(BUILDDIR)/quake/r_edge.o $(BUILDDIR)/quake/r_misc.o $(BUILDDIR)/quake/r_main.o $(BUILDDIR)/quake/r_sky.o $(BUILDDIR)/quake/r_sprite.o $(BUILDDIR)/quake/r_surf.o $(BUILDDIR)/quake/r_part.o $(BUILDDIR)/quake/r_vars.o $(BUILDDIR)/quake/screen.o $(BUILDDIR)/quake/sbar.o $(BUILDDIR)/quake/sv_main.o $(BUILDDIR)/quake/sv_phys.o $(BUILDDIR)/quake/sv_move.o $(BUILDDIR)/quake/sv_user.o $(BUILDDIR)/quake/zone.o $(BUILDDIR)/quake/view.o $(BUILDDIR)/quake/wad.o $(BUILDDIR)/quake/world.o $(BUILDDIR)/quake/cd_null.o $(BUILDDIR)/quake/sys_beeb.o $(BUILDDIR)/quake/vid_beeb.o $(BUILDDIR)/quake/snd_mem.o $(BUILDDIR)/quake/snd_mix.o $(BUILDDIR)/quake/snd_null.o $(BUILDDIR)/quake/in_beeb.o
+# environment
+ELECTRON_RUN_AS_NODE = 1
+# environment
+TEMP = C:\Users\dudle\AppData\Local\Temp
+# environment
+VSCODE_IPC_HOOK = \\.\pipe\c92adc0de03cace00f1934fa490e8cc4-1.57.0-main-sock
+# default
+.RECIPEPREFIX := 
+# automatic
+<F = $(notdir $<)
+# environment
+CWRSYNC_HOME = C:\ProgramData\chocolatey\lib\rsync\cwrsync_5.5.0_x86_free
+# default
+SUFFIXES := 
+# environment
+ALLUSERSPROFILE = C:\ProgramData
+# makefile (from 'Makefile', line 13)
+LD = arm-none-eabi-gcc
+# environment
+SESSIONNAME = Console
+# default
+.FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell nocomment grouped-target extra-prereqs archives jobserver output-sync load
+# environment
+PROCESSOR_REVISION = 7100
+# makefile (from 'Makefile', line 12)
+CC = arm-none-eabi-gcc
+# makefile (from 'Makefile', line 9)
+BUILDDIR = .
+# makefile (from 'Makefile', line 14)
+OBJCOPY = arm-none-eabi-objcopy
+# environment
+PROCESSOR_IDENTIFIER = AMD64 Family 23 Model 113 Stepping 0, AuthenticAMD
+# variable set hash-table stats:
+# Load=114/1024=11%, Rehash=0, Collisions=10/374=3%
+
+# Pattern-specific Variable Values
+
+# No pattern-specific variable values.
+
+# Directories
+
+# . (key d:/Beeb/BeebQuake, mtime 1623347364): 292 files, no impossibilities.
+
+# 292 files, no impossibilities in 1 directories.
+
+# Implicit Rules
+
+%.o: %.c
+#  recipe to execute (from 'Makefile', line 123):
+	$(CC) $(CFLAGS) -c $< -o $@
+
+%.o: %.s
+#  recipe to execute (from 'Makefile', line 139):
+	$(CC) $(CFLAGS) -c $< -o $@
+
+# 2 implicit rules, 0 (0.0%) terminal.
+# Files
+
+# Not a target:
+r_surf.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+quake/r_sky.o: r_sky.c
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 275):
+	$(DO_CC)
+
+quake/menu.o: menu.c
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 215):
+	$(DO_CC)
+
+# Not a target:
+sv_user.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+r_edge.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+quake/sv_move.o: sv_move.c
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 299):
+	$(DO_CC)
+
+# Not a target:
+d_part.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+quake/d_modech.o: d_modech.c
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 185):
+	$(DO_CC)
+
+# Not a target:
+chase.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+host.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+quake/cmd.o: cmd.c
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 161):
+	$(DO_CC)
+
+# Not a target:
+d_surf.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+quake/d_zpoint.o: d_zpoint.c
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 203):
+	$(DO_CC)
+
+quake/keys.o: keys.c
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 212):
+	$(DO_CC)
+
+# Not a target:
+sbar.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+quake/world.o: world.c
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 314):
+	$(DO_CC)
+
+# Not a target:
+armc-start.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+model.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+d_zpoint.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+wad.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+quake/cvar.o: cvar.c
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 173):
+	$(DO_CC)
+
+quake/snd_dma.o: snd_dma.c
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 335):
+	$(DO_CC)
+
+# Not a target:
+sys_linux.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+menu.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+quake/net_bsd.o: net_bsd.c
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 239):
+	$(DO_CC)
+
+# Not a target:
+r_sprite.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+quake/r_main.o: r_main.c
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 272):
+	$(DO_CC)
+
+# Not a target:
+cd_linux.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+quake/zone.o: zone.c
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+ 
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 305):
+	$(DO_CC)
+
+quake/wad.o: wad.c
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 311):
+	$(DO_CC)
+
+quake/r_aclip.o: r_aclip.c
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 257):
+	$(DO_CC)
+
+quake/r_part.o: r_part.c
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 284):
+	$(DO_CC)
+
+quake/r_vars.o: r_vars.c
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 374):
+	$(DO_CC)
+
+# Not a target:
+r_bsp.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+quake/d_edge.o: d_edge.c
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 176):
+	$(DO_CC)
+
+# Not a target:
+r_alias.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+d_scan.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+net_loop.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+quake/snd_linux.o: snd_linux.c
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 344):
+	$(DO_CC)
+
+clean-debug:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 385):
+	$(MAKE) clean2 BUILDDIR=$(BUILD_DEBUG_DIR) CFLAGS="$(DEBUG_CFLAGS)"
+
+# Not a target:
+net_udp.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+net_vcr.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+quake/sys_beeb.o: sys_beeb.c
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 329):
+	$(DO_CC)
+
+quake/view.o: view.c
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 308):
+	$(DO_CC)
+
+quake/mathlib.o: mathlib.c
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 218):
+	$(DO_CC)
+
+beebScreen/bagiCode.c: beebScreen/beebCode.asm beebScreen/bagiCode.bin
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 132):
+	cd beebScreen; ./mkasm.bat
+
+# Not a target:
+keys.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+vid_svgalib.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+quake/d_sky.o: d_sky.c
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 191):
+	$(DO_CC)
+
+# Not a target:
+Makefile:
+#  Implicit rule search has been done.
+#  Last modified 2021-06-03 11:08:43
+#  File has been updated.
+#  Successfully updated.
+
+quake/net_main.o: net_main.c
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 230):
+	$(DO_CC)
+
+quake/r_draw.o: r_draw.c
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 368):
+	$(DO_CC)
+
+quake/pr_edict.o: pr_edict.c
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 251):
+	$(DO_CC)
+
+# Not a target:
+r_main.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+quake/nonintel.o: nonintel.c
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 245):
+	$(DO_CC)
+
+quake/cl_parse.o: cl_parse.c
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 152):
+	$(DO_CC)
+
+quake/pr_exec.o: pr_exec.c
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 254):
+	$(DO_CC)
+
+# Not a target:
+d_init.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+build_release:
+#  Implicit rule search has not been done.
+#  Implicit/static pattern stem: ''
+#  File does not exist.
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# automatic
+# @ := build_release
+# automatic
+# * := 
+# automatic
+# < := 
+# automatic
+# + := 
+# automatic
+# % := 
+# automatic
+# ^ := 
+# automatic
+# ? := 
+# automatic
+# | := 
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=2/14=14%
+#  recipe to execute (from 'Makefile', line 31):
+	mkdir -p $(BUILDDIR)\quake
+	$(MAKE) targets
+
+# Not a target:
+r_vars.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+quake/screen.o: screen.c
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 287):
+	$(DO_CC)
+
+quake/sbar.o: sbar.c
+#  Implicit 
+ rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 290):
+	$(DO_CC)
+
+# Not a target:
+r_part.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+quake/d_fill.o: d_fill.c
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 179):
+	$(DO_CC)
+
+quake/r_surf.o: r_surf.c
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 281):
+	$(DO_CC)
+
+beebScreen/bagiCode.bin: beebScreen/beebCode.asm
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+quake/console.o: console.c
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 167):
+	$(DO_CC)
+
+quake/snd_null.o: snd_null.c
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 347):
+	$(DO_CC)
+
+quake/r_edge.o: r_edge.c
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 371):
+	$(DO_CC)
+
+clean: clean-debug clean-release
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 382):
+	rm -f quake.spec glquake.spec quake.x11.spec
+
+quake/vid_svgalib.o: vid_svgalib.c
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 332):
+	$(DO_O_CC)
+
+# Not a target:
+d_vars.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+crc.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+beebScreen/beebCode.bin: beebScreen/beebCode.asm
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+d_modech.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+r_sky.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+sys_beeb.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+quake/net_loop.o: net_loop.c
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 227):
+	$(DO_CC)
+
+# Not a target:
+zone.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+quake/r_alias.o: r_alias.c
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 365):
+	$(DO_CC)
+
+# Not a target:
+sv_move.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+quake/common.o: common.c
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 164):
+	$(DO_DEBUG_CC)
+
+# Not a target:
+host_cmd.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+quake/net_none.o: net_none.c
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 242):
+	$(DO_CC)
+
+# Not a target:
+world.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+cl_parse.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+cvar.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+beebScreen/beebCode.asm:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+quake/cd_null.o: cd_null.c
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 320):
+	$(DO_CC)
+
+quake/r_sprite.o: r_sprite.c
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 278):
+	$(DO_CC)
+
+quake/host.o: host.c
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 206):
+	$(DO_CC)
+
+quake/crc.o: crc.c
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 170):
+	$(DO_CC)
+
+# Not a target:
+view.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+console.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+beebScreen/beebCode.c: beebScreen/beebCode.bin
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 129):
+	cd beebScreen; ./mkasm.bat
+
+quake/cl_tent.o: cl_tent.c
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 155):
+	$(DO_CC)
+
+# Not a target:
+beebScreen/beebScreen.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+net_bsd.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+d_sprite.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+quake/cl_demo.o: cl_demo.c
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 143):
+	$(DO_CC)
+
+# Not a target:
+beebScreen/beebScreen.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+quake/sv_phys.o: sv_phys.c
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 296):
+	$(DO_CC)
+
+# Not a target:
+cl_demo.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+armtubeio.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+r_misc.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.DEFAULT:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+quake/pr_cmds.o: pr_cmds.c
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 248):
+	$(DO_CC)
+
+qu 
+ake/model.o: model.c
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 221):
+	$(DO_CC)
+
+quake/r_misc.o: r_misc.c
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 269):
+	$(DO_CC)
+
+all: build_release
+#  Command line target.
+#  Implicit rule search has been done.
+#  File does not exist.
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/6=0%
+
+# Not a target:
+r_draw.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+audio.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+cmd.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+quake/cl_input.o: cl_input.c
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 146):
+	$(DO_CC)
+
+quake/chase.o: chase.c
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 158):
+	$(DO_CC)
+
+quake/sys_linux.o: sys_linux.c
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 326):
+	$(DO_CC)
+
+beebScreen/beebScreen.o: beebScreen/beebScreen.c beebScreen/beebCode.c beebScreen/beebScreen.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 126):
+	$(CC) $(CFLAGS) -c beebScreen/beebScreen.c -o beebScreen/beebScreen.o
+
+# Not a target:
+screen.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+quake/sv_user.o: sv_user.c
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 302):
+	$(DO_CC)
+
+# Not a target:
+snd_mem.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+quake/d_surf.o: d_surf.c
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 197):
+	$(DO_CC)
+
+# Not a target:
+cd_null.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+quake/cl_main.o: cl_main.c
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 149):
+	$(DO_CC)
+
+clean-release:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 388):
+	$(MAKE) clean2 BUILDDIR=$(BUILD_RELEASE_DIR) CFLAGS="$(DEBUG_CFLAGS)"
+
+# Not a target:
+snd_null.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+quake/vid_beeb.o: vid_beeb.c
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 353):
+	$(DO_CC)
+
+quake/d_sprite.o: d_sprite.c
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 194):
+	$(DO_CC)
+
+quake/host_cmd.o: host_cmd.c
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 209):
+	$(DO_CC)
+
+# Not a target:
+sv_main.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+quake/net_vcr.o: net_vcr.c
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 233):
+	$(DO_CC)
+
+# Not a target:
+common.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+snd_linux.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+quake/r_efrag.o: r_efrag.c
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 266):
+	$(DO_CC)
+
+# Not a target:
+vid_beeb.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+snd_dma.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+nonintel.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+r_efrag.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+d_polyse.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+quake/sv_main.o: sv_main.c
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 293):
+	$(DO_CC)
+
+quake/in_null.o: in_null.c
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 323):
+	$(DO_CC)
+
+# Not a target:
+pr_exec.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+in_beeb.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+pr_edict.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+sv_phys.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+cl_main.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+quake/d_vars.o: d_vars.c
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 200):
+	$(DO_CC)
+
+quake/in_beeb.o: in_beeb.c
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 356):
+	$(DO_CC)
+
+# Not a target:
+d_fill.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+quake/snd_mix.o: snd_mix.c
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been upda 
+ted.
+#  recipe to execute (from 'Makefile', line 341):
+	$(DO_CC)
+
+quake/r_light.o: r_light.c
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 263):
+	$(DO_CC)
+
+targets: bquake
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+d_sky.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+quake/d_part.o: d_part.c
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 359):
+	$(DO_CC)
+
+quake/r_bsp.o: r_bsp.c
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 260):
+	$(DO_CC)
+
+# Not a target:
+in_null.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+net_main.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+snd_mix.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+quake/d_init.o: d_init.c
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 182):
+	$(DO_CC)
+
+# Not a target:
+net_none.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+quake/net_dgrm.o: net_dgrm.c
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 224):
+	$(DO_CC)
+
+# Not a target:
+.SUFFIXES:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+quake/draw.o: draw.c
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 350):
+	$(DO_CC)
+
+# Not a target:
+d_edge.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+armtubeswis.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+draw.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+quake/d_polyse.o: d_polyse.c
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 362):
+	$(DO_CC)
+
+quake/cd_linux.o: cd_linux.c
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 317):
+	$(DO_CC)
+
+# Not a target:
+pr_cmds.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+bquake: quake/cl_demo.o quake/cl_input.o quake/cl_main.o quake/cl_parse.o quake/cl_tent.o quake/chase.o quake/cmd.o quake/common.o quake/console.o quake/crc.o quake/cvar.o quake/draw.o quake/d_edge.o quake/d_fill.o quake/d_init.o quake/d_modech.o quake/d_part.o quake/d_polyse.o quake/d_scan.o quake/d_sky.o quake/d_sprite.o quake/d_surf.o quake/d_vars.o quake/d_zpoint.o quake/host.o quake/host_cmd.o quake/keys.o quake/menu.o quake/mathlib.o quake/model.o quake/net_loop.o quake/net_main.o quake/net_vcr.o quake/net_none.o quake/nonintel.o quake/pr_cmds.o quake/pr_edict.o quake/pr_exec.o quake/r_aclip.o quake/r_alias.o quake/r_bsp.o quake/r_light.o quake/r_draw.o quake/r_efrag.o quake/r_edge.o quake/r_misc.o quake/r_main.o quake/r_sky.o quake/r_sprite.o quake/r_surf.o quake/r_part.o quake/r_vars.o quake/screen.o quake/sbar.o quake/sv_main.o quake/sv_phys.o quake/sv_move.o quake/sv_user.o quake/zone.o quake/view.o quake/wad.o quake/world.o quake/cd_null.o q 
+uake/sys_beeb.o quake/vid_beeb.o quake/snd_mem.o quake/snd_mix.o quake/snd_null.o quake/in_beeb.o armc-start.o armtubeio.o armtubeswis.o beebScreen/beebScreen.o audio.o
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 116):
+	$(CC) $(CFLAGS) -o temp $(QUAKE_OBJS) $(BEEB_OBJS) $(LDFLAGS)
+	$(OBJCOPY) -O binary temp $@
+	$(RM) temp
+
+clean2:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 391):
+	-rm -f $(quake_OBJS) $(X11_OBJS) $(GLQUAKE_OBJS) $(GLSVGA_OBJS) \
+		$(GLX_OBJS)
+
+quake/snd_mem.o: snd_mem.c
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 338):
+	$(DO_CC)
+
+quake/net_udp.o: net_udp.c
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 236):
+	$(DO_CC)
+
+# Not a target:
+r_aclip.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+mathlib.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+cl_tent.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+cl_input.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+net_dgrm.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+r_light.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+quake/d_scan.o: d_scan.c
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 188):
+	$(DO_CC)
+
+# files hash-table stats:
+# Load=179/1024=17%, Rehash=0, Collisions=41/431=10%
+# VPATH Search Paths
+
+# No 'vpath' search paths.
+
+# No general ('VPATH' variable) search path.
+
+# strcache buffers: 1 (0) / strings = 390 / storage = 4388 B / avg = 11 B
+# current buf: size = 8174 B / used = 4388 B / count = 390 / avg = 11 B
+
+# strcache performance: lookups = 650 / hit rate = 40%
+# hash-table stats:
+# Load=390/8192=5%, Rehash=0, Collisions=21/650=3%
+# Finished Make data base on Thu Jun 10 20:48:05 2021
+
+ 
