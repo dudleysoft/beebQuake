@@ -1,0 +1,43 @@
+BeebQuake v1.0
+
+This is the first release of the Quake source port for the BBC Micro-computer,
+this is based on the original source code for WinQuake as released by id software
+
+There are a few differences due to the nature of the ADFS file system used on the
+BBC Micro, file names have been changed using a similar convention to that used under
+RiscOS for DOS filenames, directory seperators are '.' and periods in the filenames are
+replaced with '/'.
+
+Other than that this works the same as QUAKE on other platforms, the main executable
+is called BQUAKE and sits in the root folder, the PAK files go in a directory called id1
+under the game folder, mods can go in their own folder and be loaded with '-game',
+the PAK file names are changed to PAK0/PAK and PAK1/PAK but otherwise it works the same.
+
+VideoNULA
+=========
+
+Whilest a VideoNULA upgrade isn't required to run QUAKE on the BBC Micro it is recommended,
+the default dithered MODE 2 palette is rather dark and makes it difficult to see anything
+on the screen, to use VideoNULA simply add -NULA (case independant) on the command line,
+this uses a dynamic 16 colour palette which actually works incredibly well with Quake's
+default palette.
+
+If you prefer the palette to stay stable you can use the greyscale palette which uses a fixed
+16 colour greyscale palette and maps all colours to their equivalent grey colour, to use this add
+-GREY to the command line.
+
+There are two more palette modes -ST (or -9bitcolor) which reduces the colour depth to 9bits (3 per colour,
+512 colours) and -EGA (or -6bitcolor) which reduces the colour depth to 6bits (2 bits per colour, 64 colours).
+
+The default behaviour is to use the standard beeb palette, you will probably want to go into the menu and
+increase the brightness since the default is very dark.
+
+BeebEm
+======
+
+While it is possible to run BQUAKE under BeebEm using the ARM7TDMI co-processor it is not advisable, since
+QUAKE was designed to use hardware accelerated floating point (still a bit of a novelty when it came out)
+it doesn't work well on devices without an FPU (like the ARM7TDMI processor), the Pi Native is running the
+same software floating point, but it's 1GHz processor can brute force the floating point and get acceptable
+performance (and since the bottleneck is transfering the video across the tube this doesn't cause any frame
+rate issues with normal play)
