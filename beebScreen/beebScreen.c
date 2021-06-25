@@ -31,7 +31,7 @@ int bsCurrentFrame;
 int bsBufferSize;
 int bsHostLomem;
 unsigned char bsFrameCounter;
-unsigned char *backBuffer[2];
+unsigned char backBuffer[2][20480];
 void (*bsCallback)(void);
 
 // Load into UDG memory at &C00, as long as we don't use characters 224-255 we'll be fine
@@ -222,6 +222,103 @@ void beebScreen_SendPal(int *pal,int count)
     } 
 }
 
+int beebScreen_CreatePalMap(int *pal,int count,unsigned char *map)
+{
+	int used=count;
+	map[0] = 0;
+	for(int i = 1; i < count; i++)
+	{
+		map[i] = i;
+		for(int j = 0; j < i; j++)
+		{
+			if ((pal[j] & 0xff0f) == (pal[i] & 0xff0f))
+			{
+				map[j] = i;
+				j = i;
+				used--;
+			}
+		}
+	}
+	return used;
+}
+
+int lastPalIndices[] = {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1};
+
+void beebScreen_CreateDynamicPalette(int* inPal,unsigned char *palMap,int colours,int *outPal,int target)
+{
+	int counts[colours];
+	int most[target];
+
+	// clear counts
+	memset(counts, 0, colours * sizeof(int));
+
+	// count unique palette colours, note that non-unique palette entries will
+	// count all different values, luckily remap will remap them back to the first reference
+	unsigned char *p=bsBuffer;
+	for(int i = 0; i < bsBufferW * bsBufferH; ++i)
+	{
+		int col=palMap ? palMap[*p++] : *p++;
+		counts[col]++;
+	}
+
+	int used[target];
+	int allocated[target];
+
+	// Count the most populous colours
+	for(int i = 0; i < target; ++i)
+	{
+		int found = 0;
+		int max = counts[0];
+
+		for(int j = 1; j < colours; ++j)
+		{
+			if (counts[j] > max)
+			{
+				max = counts[j];
+				found = j;
+			}
+		}
+		most[i] = found;
+		counts[found] = 0;
+		used[i] = FALSE;
+		allocated[i] = FALSE;
+	}
+
+	// Find palette entries already in use (try to speed up transfer)
+	for(int i = 0; i < target; ++i)
+	{
+		for(int j = 0; j < target; ++j)
+		{
+			if (lastPalIndices[j] == most[i])
+			{
+				allocated[i] = TRUE;
+				used[j] = TRUE;
+				// Update palette (makes pal change work without distrupting the display)
+				outPal[j] = (inPal[most[i]] & 0xff0f) | (j<<4);
+				j=16;
+			}
+		}
+	}
+
+	// Find space for the remaining colours
+	for(int i = 0; i < 16; ++i)
+	{
+		int j=0;
+		if (!allocated[i])
+		{
+			// Find the first unused slot
+			while((j < 16) && used[j]) j++;
+
+			// Place the palette
+			outPal[j] = (inPal[most[i]] & 0xff0f) | (j<<4);
+			lastPalIndices[j] = most[i];
+			used[j] = TRUE;
+		}
+	}
+
+	beebScreen_CreateRemapColours(inPal,outPal,target,colours);
+}
+
 void sendCrtc(int reg,int value)
 {
     _VDU(BS_CMD_SEND_CRTC);
@@ -248,7 +345,6 @@ void beebScreen_SetMode(int mode)
     _VDU(mode);
     // // Turn off cursor
     sendCrtc(10,32);
-    // _VDU(23);_VDU(0);_VDU(11);_VDU(32);_VDU(0);_VDU(0);_VDU(0);_VDU(0);_VDU(0);_VDU(0);
 
     switch(mode)
     {
@@ -308,20 +404,10 @@ void beebScreen_SetMode(int mode)
 
     bsBuffer = NULL;
 
-    if (backBuffer[0])
-    {
-        free(backBuffer[0]);
-    }
-    if (backBuffer[1])
-    {
-        free(backBuffer[1]);
-    }
-
-    backBuffer[0]=malloc(bufferSize);
     memset(backBuffer[0],0,bufferSize);
+
     if (bsDoubleBuffer)
     {
-        backBuffer[1]=malloc(bufferSize);
         memset(backBuffer[1],0,bufferSize);
     }
     bsBufferSize = bufferSize;
@@ -352,8 +438,6 @@ void beebScreen_Init(int mode, int flags)
     _swi(OS_Byte,_INR(0,1),200,3);
     // Set ESCAPE to generate the key value
     _swi(OS_Byte,_INR(0,1),229,1);
-
-    backBuffer[0]=backBuffer[1] = NULL;
 
     // Use same routine we've made external
     beebScreen_SetMode(mode);
@@ -477,6 +561,24 @@ void beebScreen_UseDefaultScreenBases()
     {
         beebScreen_SetScreenBase(beebScreen_CalcScreenBase(1),1);
     }
+}
+
+void beebScreen_ClearScreens()
+{
+    int addr = bsDoubleBuffer ? bsScreenBase[1] : bsScreenBase[0];
+    int end = bsMode < 3 ? 0x3000: 0x5800;
+    
+    while(addr < end)
+    {
+        WriteByteToIo((void*)addr++,0);
+    }
+    memset((void*)backBuffer[0],0,bsBufferSize);
+    if (bsDoubleBuffer)
+    {        
+        memset((void*)backBuffer[1],0,bsBufferSize);
+    }
+    // Reset last palette indices
+    memset(lastPalIndices,-1,sizeof(lastPalIndices));
 }
 
 void beebScreen_SetBuffer(unsigned char *buffer, int format,int w,int h)
@@ -942,12 +1044,8 @@ void updateMouse()
 {
     int x,y;
 
-    // x = ReadByteFromIo((void*)0xda6);
-    // y = ReadByteFromIo((void*)0xda7);
     _swi(OS_Byte,_INR(0,1)|_OUTR(1,2),128,7,&x,&y);
     bsMouseX = ((x & 0xff) + (y<<8));
-    // x = ReadByteFromIo((void*)0xda8);
-    // y = ReadByteFromIo((void*)0xda9);
     _swi(OS_Byte,_INR(0,1)|_OUTR(1,2),128,8,&x,&y);
     bsMouseY = ((x & 0xff) + (y<<8));
     _swi(OS_Byte,_INR(0,1)|_OUT(1),128,9,&bsMouseB);
@@ -1015,14 +1113,14 @@ void beebScreen_Flip()
         bsCurrentFrame=1-bsCurrentFrame;
         sendScreenbase(bsScreenBase[bsCurrentFrame]);
     }
-
-    // Read frame counter from the beeb
-    bsFrameCounter = ReadByteFromIo((void*)0x6d);
 }
 
 void beebScreen_VSync()
 {
     _swi(OS_Byte,_IN(0),19);
+
+    // Read frame counter from the beeb
+    bsFrameCounter = ReadByteFromIo((void*)0x6d);
 }
 
 void beebScreen_Quit()

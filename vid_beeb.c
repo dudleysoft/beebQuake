@@ -62,27 +62,6 @@ byte beebGamma[] = {4,7,9,11,13,15,17,19,21,22,24,26,27,29,30,32,33,35,36,38,39,
      242,243,244,244,245,246,247,247,248,249,250,251,251,252,253,254,254,
      255};
 
-
-int createPalMap()
-{
-	int count = 256;
-	palMap[0] = 0;
-	for(int i = 1; i < 256; i++)
-	{
-		palMap[i] = i;
-		for(int j = 0; j < i; j++)
-		{
-			if ((beebPal[j] & 0xff0f) == (beebPal[i] & 0xff0f))
-			{
-				palMap[j] = i;
-				j = i;
-				count--;
-			}
-		}
-	}
-	return count;
-}
-
 void extractBGR888x64(int v,int *r,int *g,int *b)
 {
     *b = (v >> 4) & 0x0c;
@@ -100,7 +79,7 @@ void extractBGR888x512(int v,int *r,int *g,int *b)
 int greyPal[]= {0x0000,0x1111,0x2222,0x3333,0x4444,0x5555,0x6666,0x7777,0x8888,0x9999,0xaaaa,0xbbbb,0xcccc,0xdddd,0xeeee,0xffff};
 
 //extern int viewheight;
-int lastPalIndices[] = {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1};
+// int lastPalIndices[] = {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1};
 
 qboolean setPal = false;
 
@@ -119,86 +98,6 @@ int partitionColor(int pal)
 #define GET_G(v) (((v)>> 12) & 0x000f)
 #define GET_B(v) (((v)>> 8) & 0x000f)
 
-void SetupPalette()
-{
-	int counts[256];
-	int most[16];
-
-	if (!setPal)
-	{
-		return;
-	}
-
-	// clear counts
-	memset(counts, 0, sizeof(counts));
-
-	// count unique palette colours, note that non-unique palette entries will
-	// count all different values, luckily remap will remap them back to the first reference
-	byte *p=vid_buffer;
-	for(int i = 0; i < BASEWIDTH * BASEHEIGHT; ++i)
-	{
-		int col=palMap[*p++];
-		counts[col]++;
-	}
-
-	int used[16];
-	int allocated[16];
-
-	// Count the 16 most populous colours
-	for(int i = 0; i < 16; ++i)
-	{
-		int found = 0;
-		int max = counts[0];
-
-		for(int j = 1; j < 256; ++j)
-		{
-			if (counts[j] > max)
-			{
-				max = counts[j];
-				found = j;
-			}
-		}
-		most[i] = found;
-		counts[found] = 0;
-		used[i] = FALSE;
-		allocated[i] = FALSE;
-	}
-
-	// Find palette entries already in use (try to speed up transfer)
-	for(int i = 0; i < 16; ++i)
-	{
-		for(int j = 0; j < 16; ++j)
-		{
-			if (lastPalIndices[j] == most[i])
-			{
-				allocated[i] = TRUE;
-				used[j] = TRUE;
-				// Update palette (makes pal change work without distrupting the display)
-				nulaPal[j] = (beebPal[most[i]] & 0xff0f) | (j<<4);
-				j=16;
-			}
-		}
-	}
-
-	// Find space for the remaining colours
-	for(int i = 0; i < 16; ++i)
-	{
-		int j=0;
-		if (!allocated[i])
-		{
-			// Find the first unused slot
-			while((j < 16) && used[j]) j++;
-
-			// Place the palette
-			nulaPal[j] = (beebPal[most[i]] & 0xff0f) | (j<<4);
-			lastPalIndices[j] = most[i];
-			used[j] = TRUE;
-		}
-	}
-
-	beebScreen_CreateRemapColours(beebPal,nulaPal,16,256);
-}
-
 void	VID_SetPalette (unsigned char *palette)
 {
 	int tempPal[256];
@@ -215,7 +114,7 @@ void	VID_SetPalette (unsigned char *palette)
 	setPal = true;
 	if (useNula)
 	{
-		createPalMap();
+		beebScreen_CreatePalMap(beebPal,256,palMap);
 
 		if (isGreyscale)
 		{
@@ -310,6 +209,9 @@ void	VID_Init (unsigned char *palette)
 
 		beebScreen_UseDefaultScreenBases();
 
+		// Clear any unused screen memory (this is slow :'( )
+		beebScreen_ClearScreens();
+
 		if (flags & BS_INIT_MOUSE)
 		{
 			beebScreen_InjectCode(bagiCode_bin,bagiCode_bin_len,0x900);
@@ -347,7 +249,7 @@ void	VID_Update (vrect_t *rects)
 {
 	if (useNula && !isGreyscale)
 	{
-		SetupPalette();
+		beebScreen_CreateDynamicPalette(beebPal,palMap,256,nulaPal,16);
 	}
 
 	beebScreen_Flip();

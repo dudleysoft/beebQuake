@@ -102,6 +102,27 @@ extern int beebScreen_MakeNulaPal(int value,int index,void (*extractor)(int v,in
 extern void beebScreen_SetNulaPal(int *values,int *output,int count, void (*extractor)(int v,int *r,int *g,int *b));
 
 /**
+ * beebScreen_CreatePalMap
+ * Creates a remap array which maps a palette to the first occurance of each unique NULA palette entry
+ * @param pal - Palette to create map for
+ * @param count - Number of colours in the palette
+ * @param map - Array to write map into
+ * @returns Number of unique colours found
+ */
+extern int beebScreen_CreatePalMap(int *pal,int count,unsigned char *map);
+
+/**
+ * beebScreen_CreateDynamicPalette
+ * Creates a dynamic palette from the current palette, also creates internal remap palette
+ * @param inPal - Source palette
+ * @param palMap - Remap from original palette to unique NULA colours
+ * @param colours - Number of colours in the original palette (not the remap)
+ * @param outPal - Target palette
+ * @param target - Number of target colours
+ */
+extern void beebScreen_CreateDynamicPalette(int* inPal,unsigned char *palMap,int colours,int *outPal,int target);
+
+/**
  * beebScreen_SendPal
  * Sends a set of NULA palette values to the host
  * @param pal - Array of palette entries
@@ -185,6 +206,14 @@ extern int beebScreen_CalcScreenBase(int secondBuffer);
  * If double buffer is set the both addresses will be calculated
  */
 extern void beebScreen_UseDefaultScreenBases();
+
+/**
+ * beebScreen_ClearScreens
+ * Clears all the memory for both screen buffers both locally and on the host.
+ * Normally you would use this if the size of the two combined buffers is lower
+ * than the normal screen base address since this memory isn't cleared by a mode change.
+ */
+extern void beebScreen_ClearScreens();
 
 /**
  * beebScreen_FlipCallback

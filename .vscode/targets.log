@@ -7,7 +7,7 @@ make.exe all --print-data-base --no-builtin-variables --no-builtin-rules --quest
 # There is NO WARRANTY, to the extent permitted by law.
  
 
-# Make data base, printed on Thu Jun 10 20:48:05 2021
+# Make data base, printed on Wed Jun 23 08:58:28 2021
 
 # Variables
 
@@ -22,7 +22,7 @@ USERPROFILE = C:\Users\dudle
 # environment
 LOCALAPPDATA = C:\Users\dudle\AppData\Local
 # environment
-VSCODE_IPC_HOOK_EXTHOST = \\.\pipe\vscode-ipc-77749e62-86f6-4cf8-97b6-f2aaa1ef376c-sock
+VSCODE_IPC_HOOK_EXTHOST = \\.\pipe\vscode-ipc-8d146f3b-5f09-49b8-bc3a-911c9b97e320-sock
 # environment
 VSCODE_CWD = C:\Users\dudle\AppData\Local\Programs\Microsoft VS Code
 # environment
@@ -40,7 +40,7 @@ MAKE_COMMAND := C:/ProgramData/chocolatey/lib/make/tools/install/bin/make.exe
 # makefile (from 'Makefile', line 22)
 DO_DEBUG_CC = $(CC) $(CFLAGS) -o $@ -c $<
 # environment
-CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_15968_TGXEIKFOGUNZMLSW
+CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_8120_IWIPVOQQOJHNOVFG
 # environment
 VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # default
@@ -94,7 +94,7 @@ MAKEFILE_LIST := Makefile
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
-VSCODE_PID = 15968
+VSCODE_PID = 8120
 # automatic
 ?D = $(patsubst %/,%,$(patsubst %\,%,$(dir $?)))
 # automatic
@@ -190,7 +190,7 @@ TARGETS = bquake
 # environment
 PUBLIC = C:\Users\Public
 # environment
-VSCODE_NODE_CACHED_DATA_DIR = C:\Users\dudle\AppData\Roaming\Code\CachedData\b4c1bd0a9b03c749ea011b06c6d2676c8091a70c
+VSCODE_NODE_CACHED_DATA_DIR = C:\Users\dudle\AppData\Roaming\Code\CachedData\507ce72a4466fbb27b715c3722558bb15afa9f48
 # environment
 ZGB_PATH = d:\ZGB_master\common
 # environment
@@ -202,8 +202,7 @@ HOMEDRIVE = C:
 # environment
 PROCESSOR_ARCHITECTURE = x86
 # environment
-VSCODE_AMD_ENTRYPOINT = vs/workbench/services/extensi 
-ons/node/extensionHostProcess
+VSCODE_AMD_ENTRYPOINT = vs/workbench/services/extensions/node/extensionHostProcess
 # environment
 COMMONPROGRAMFILES(X86) = C:\Program Files (x86)\Common Files
 # makefile (from 'Makefile', line 42)
@@ -213,7 +212,7 @@ ELECTRON_RUN_AS_NODE = 1
 # environment
 TEMP = C:\Users\dudle\AppData\Local\Temp
 # environment
-VSCODE_IPC_HOOK = \\.\pipe\c92adc0de03cace00f1934fa490e8cc4-1.57.0-main-sock
+VSCODE_IPC_HOOK = \\.\pipe\c92adc0de03cace00f1934fa490e8cc4-1.57.1-main-sock
 # default
 .RECIPEPREFIX := 
 # automatic
@@ -229,7 +228,8 @@ LD = arm-none-eabi-gcc
 # environment
 SESSIONNAME = Console
 # default
-.FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell nocomment grouped-target extra-prereqs archives jobserver output-sync load
+.FEATURES :=  
+target-specific order-only second-expansion else-if shortest-stem undefine oneshell nocomment grouped-target extra-prereqs archives jobserver output-sync load
 # environment
 PROCESSOR_REVISION = 7100
 # makefile (from 'Makefile', line 12)
@@ -249,9 +249,9 @@ PROCESSOR_IDENTIFIER = AMD64 Family 23 Model 113 Stepping 0, AuthenticAMD
 
 # Directories
 
-# . (key d:/Beeb/BeebQuake, mtime 1623347364): 292 files, no impossibilities.
+# . (key d:/Beeb/BeebQuake, mtime 1624352238): 295 files, no impossibilities.
 
-# 292 files, no impossibilities in 1 directories.
+# 295 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -409,7 +409,8 @@ quake/snd_dma.o: snd_dma.c
 	$(DO_CC)
 
 # Not a target:
-sys_linux.c:
+sys 
+_linux.c:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -449,7 +450,6 @@ cd_linux.c:
 quake/zone.o: zone.c
 #  Implicit rule search has not been done.
 #  Modification time never checked.
- 
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 305):
 	$(DO_CC)
@@ -622,7 +622,8 @@ r_main.c:
 
 quake/nonintel.o: nonintel.c
 #  Implicit rule search has not been done.
-#  Modification time never checked.
+#  Modification  
+time never checked.
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 245):
 	$(DO_CC)
@@ -689,8 +690,7 @@ quake/screen.o: screen.c
 	$(DO_CC)
 
 quake/sbar.o: sbar.c
-#  Implicit 
- rule search has not been done.
+#  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 290):
@@ -822,7 +822,8 @@ quake/common.o: common.c
 #  Modification time never checked.
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 164):
-	$(DO_DEBUG_CC)
+	$(DO_DEBUG_CC) 
+
 
 # Not a target:
 host_cmd.c:
@@ -984,8 +985,7 @@ quake/pr_cmds.o: pr_cmds.c
 #  recipe to execute (from 'Makefile', line 248):
 	$(DO_CC)
 
-qu 
-ake/model.o: model.c
+quake/model.o: model.c
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -1057,7 +1057,8 @@ beebScreen/beebScreen.o: beebScreen/beebScreen.c beebScreen/beebCode.c beebScree
 # Not a target:
 screen.c:
 #  Implicit rule search has not been done.
-#  Modification time never checked.
+#  Modification time never 
+ checked.
 #  File has not been updated.
 
 quake/sv_user.o: sv_user.c
@@ -1237,7 +1238,8 @@ quake/d_vars.o: d_vars.c
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 200):
+#  recipe to ex 
+ecute (from 'Makefile', line 200):
 	$(DO_CC)
 
 quake/in_beeb.o: in_beeb.c
@@ -1256,8 +1258,7 @@ d_fill.c:
 quake/snd_mix.o: snd_mix.c
 #  Implicit rule search has not been done.
 #  Modification time never checked.
-#  File has not been upda 
-ted.
+#  File has not been updated.
 #  recipe to execute (from 'Makefile', line 341):
 	$(DO_CC)
 
@@ -1379,11 +1380,11 @@ quake/cd_linux.o: cd_linux.c
 # Not a target:
 pr_cmds.c:
 #  Implicit rule search has not been done.
-#  Modification time never checked.
+#  Modifica 
+tion time never checked.
 #  File has not been updated.
 
-bquake: quake/cl_demo.o quake/cl_input.o quake/cl_main.o quake/cl_parse.o quake/cl_tent.o quake/chase.o quake/cmd.o quake/common.o quake/console.o quake/crc.o quake/cvar.o quake/draw.o quake/d_edge.o quake/d_fill.o quake/d_init.o quake/d_modech.o quake/d_part.o quake/d_polyse.o quake/d_scan.o quake/d_sky.o quake/d_sprite.o quake/d_surf.o quake/d_vars.o quake/d_zpoint.o quake/host.o quake/host_cmd.o quake/keys.o quake/menu.o quake/mathlib.o quake/model.o quake/net_loop.o quake/net_main.o quake/net_vcr.o quake/net_none.o quake/nonintel.o quake/pr_cmds.o quake/pr_edict.o quake/pr_exec.o quake/r_aclip.o quake/r_alias.o quake/r_bsp.o quake/r_light.o quake/r_draw.o quake/r_efrag.o quake/r_edge.o quake/r_misc.o quake/r_main.o quake/r_sky.o quake/r_sprite.o quake/r_surf.o quake/r_part.o quake/r_vars.o quake/screen.o quake/sbar.o quake/sv_main.o quake/sv_phys.o quake/sv_move.o quake/sv_user.o quake/zone.o quake/view.o quake/wad.o quake/world.o quake/cd_null.o q 
-uake/sys_beeb.o quake/vid_beeb.o quake/snd_mem.o quake/snd_mix.o quake/snd_null.o quake/in_beeb.o armc-start.o armtubeio.o armtubeswis.o beebScreen/beebScreen.o audio.o
+bquake: quake/cl_demo.o quake/cl_input.o quake/cl_main.o quake/cl_parse.o quake/cl_tent.o quake/chase.o quake/cmd.o quake/common.o quake/console.o quake/crc.o quake/cvar.o quake/draw.o quake/d_edge.o quake/d_fill.o quake/d_init.o quake/d_modech.o quake/d_part.o quake/d_polyse.o quake/d_scan.o quake/d_sky.o quake/d_sprite.o quake/d_surf.o quake/d_vars.o quake/d_zpoint.o quake/host.o quake/host_cmd.o quake/keys.o quake/menu.o quake/mathlib.o quake/model.o quake/net_loop.o quake/net_main.o quake/net_vcr.o quake/net_none.o quake/nonintel.o quake/pr_cmds.o quake/pr_edict.o quake/pr_exec.o quake/r_aclip.o quake/r_alias.o quake/r_bsp.o quake/r_light.o quake/r_draw.o quake/r_efrag.o quake/r_edge.o quake/r_misc.o quake/r_main.o quake/r_sky.o quake/r_sprite.o quake/r_surf.o quake/r_part.o quake/r_vars.o quake/screen.o quake/sbar.o quake/sv_main.o quake/sv_phys.o quake/sv_move.o quake/sv_user.o quake/zone.o quake/view.o quake/wad.o quake/world.o quake/cd_null.o quake/sys_beeb.o quake/vid_beeb.o quake/snd_mem.o quake/snd_mix.o quake/snd_null.o quake/in_beeb.o armc-start.o armtubeio.o armtubeswis.o beebScreen/beebScreen.o audio.o
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -1454,7 +1455,8 @@ quake/d_scan.o: d_scan.c
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 188):
+#  recipe to ex 
+ecute (from 'Makefile', line 188):
 	$(DO_CC)
 
 # files hash-table stats:
@@ -1465,12 +1467,12 @@ quake/d_scan.o: d_scan.c
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 390 / storage = 4388 B / avg = 11 B
-# current buf: size = 8174 B / used = 4388 B / count = 390 / avg = 11 B
+# strcache buffers: 1 (0) / strings = 393 / storage = 4416 B / avg = 11 B
+# current buf: size = 8174 B / used = 4416 B / count = 393 / avg = 11 B
 
-# strcache performance: lookups = 650 / hit rate = 40%
+# strcache performance: lookups = 653 / hit rate = 39%
 # hash-table stats:
-# Load=390/8192=5%, Rehash=0, Collisions=21/650=3%
-# Finished Make data base on Thu Jun 10 20:48:05 2021
+# Load=393/8192=5%, Rehash=0, Collisions=21/653=3%
+# Finished Make data base on Wed Jun 23 08:58:28 2021
 
  
