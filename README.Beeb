@@ -32,6 +32,19 @@ There are two more palette modes -ST (or -9bitcolor) which reduces the colour de
 The default behaviour is to use the standard beeb palette, you will probably want to go into the menu and
 increase the brightness since the default is very dark.
 
+RGB2HDMI
+========
+
+Use -HDMI to add support for the RGB2HDMI adapter's inband palette command, this allows the game to run in
+NULA palette with the standard bbc VideoULA. 
+
+Pi Framebuffer
+==============
+
+New to beebQuake is the ability to use the Pi's framebuffer and HDMI output to generate the display,
+in this case the game is now 256 colours at 320x200, you need to be using PiTubeDirect hognose build
+and connect a HDMI cable to your Pi. Use -PI to enable the Pi's framebuffer.
+
 BeebEm
 ======
 
