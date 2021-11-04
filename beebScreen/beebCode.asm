@@ -58,8 +58,6 @@ bsPalData = &70
     lda continue+2
     sta WRCHV+1
     SEI
-    ;lda #2
-    ;sta &FE4E
     lda #4
     sta &FE6E
     lda oldIRQ
@@ -68,7 +66,7 @@ bsPalData = &70
     sta &205
     cli 
     ; Restore A value
-    lda #BS_CMD_SEND_QUIT
+    ;lda #BS_CMD_SEND_QUIT
     ; And return
     rts
 
@@ -78,68 +76,62 @@ bsPalData = &70
     sta CRTC_REG            ; Store in Register IO address
     lda HOST_TUBE_R1DATA    ; Second value is the new value
     sta CRTC_DATA           ; Store in Data IO address
-    lda #BS_CMD_SEND_CRTC   ; Restore A (BS_CMD_SEND_CRTC)
+    ;lda #BS_CMD_SEND_CRTC   ; Restore A (BS_CMD_SEND_CRTC)
     rts                     ; Return
 
 .sendPal
-    stx bsTemp              ; Hold X register
+    ;stx bsTemp              ; Hold X register
     lda HOST_TUBE_R1DATA    ; Load the palette count
     asl a                   ; Double the value 
     sta bsPalCount          ; Store in our palette count value
-    ldx #0                  ; Index
+    tax                     ; Index
 .sendPalLoop
     lda HOST_TUBE_R1DATA    ; Load next byte of data (pre-formated for NULA)
-    ;sta bsPalData,x         ; Store in buffer
     sta &FE23
-    inx                     ; Increase index
-    cpx bsPalCount          ; Compare with count
+    dex                     ; Increase index
     bne sendPalLoop         ; Loop if not equal
-    ldx bsTemp              ; Restore X
-    lda #BS_CMD_SEND_PAL    ; Restore A (BS_CMD_SEND_PAL)
+    ;ldx bsTemp              ; Restore X
+    ;lda #BS_CMD_SEND_PAL    ; Restore A (BS_CMD_SEND_PAL)
     rts                     ; Return
 
 .sendScreen
-    stx bsTemp              ; Store X and Y
-    sty bsTemp2
+    ;stx bsTemp              ; Store X and Y
+    ;sty bsTemp2
 .ssStoreAddr
-    lda HOST_TUBE_R1DATA    ; Load low byte of start address
-    sta ssAddr+1            
-    lda HOST_TUBE_R1DATA    ; Load high byte of start address
-    sta ssAddr+2
+    lda HOST_TUBE_R1DATA    ; Load low byte of start address                                    ; 4
+    sta ssAddr+1                                                                                ; 5
+    lda HOST_TUBE_R1DATA    ; Load high byte of start address                                   ; 4
+    sta ssAddr+2                                                                                ; 5
 .ssNextByte
-    lda HOST_TUBE_R1DATA    ; Read next byte of stream
-    beq sendScreenEnd       ; 0 terminates
-    bmi ssSkip              ; Negative is skip bytes
-    tay                     ; Transfer to Y to count bytes
-    tax                     ; Remember in X to add later
-    dey                     ; decrement Y by one
-    ;ldx #0                  ; Load index with 0
+    lda HOST_TUBE_R1DATA    ; Read next byte of stream                                          ; 4
+    beq sendScreenEnd       ; 0 terminates                                                      ; 2/3
+    bmi ssSkip              ; Negative is skip bytes                                            ; 2/3
+    tay                     ; Transfer to Y to count bytes                                      ; 2
+    tax                     ; Remember in X to add later                                        ; 2
+    dey                     ; decrement Y by one                                                ; 2
 .ssLoop
-    lda HOST_TUBE_R1DATA    ; Load next byte of data
+    lda HOST_TUBE_R1DATA    ; Load next byte of data                                            ; 4
 .ssAddr
-    sta &3000,y             ; Store to address (self-modifying)
-    ;inx                     ; Increment index
-    dey                     ; Decrement counter
-    bpl ssLoop              ; Loop
-    txa                     ; Get back the counter (will be in X now)
+    sta &3000,y             ; Store to address (self-modifying)                                 ; 5
+    dey                     ; Decrement counter                                                 ; 2
+    bpl ssLoop              ; Loop                                                              ; 3 = 14 cycles per byte
+    txa                     ; Get back the counter (will be in X now)                           ; 2
 .ssInc
-    clc
-    adc ssAddr+1            ; Add to address
-    sta ssAddr+1            ; Write Back
-    bcc ssNextByte          ; Don't increment if we haven't gone over
-    inc ssAddr+2            ; Increment high byte
-    bne ssNextByte          ; loop (will never be zero since video memory can't go above &7fff)
+    clc                                                                                         ; 2
+    adc ssAddr+1            ; Add to address                                                    ; 4
+    sta ssAddr+1            ; Write Back                                                        ; 4
+    bcc ssNextByte          ; Don't increment if we haven't gone over                           ; 2/3 = 13
+    inc ssAddr+2            ; Increment high byte                                               ; 6
+    bne ssNextByte          ; loop (will never be zero since video memory can't go above &7fff) ; 3   = 21
 .ssSkip
-    and #127                ; Remove top bit
-    bne ssInc               ; If it's non-zero then we've got the number of bytes already
-    beq ssStoreAddr         ; 128 skips to another address
-    ;lda #128                ; Otherwise it's 128
-    ;bne ssInc               ; Call increment code above
+    and #127                ; Remove top bit                                                    ; 3
+    bne ssInc               ; If it's non-zero then we've got the number of bytes already       ; 2/3
+    beq ssStoreAddr         ; 128 skips to another address                                      ; 3
 
 .sendScreenEnd
-    ldx bsTemp              ; Restore X
-    ldy bsTemp2             ; and Y
-    lda #BS_CMD_SEND_SCREEN ; Restore A (BS_CMD_SEND_SCREEN)
+    ;ldx bsTemp              ; Restore X
+    ;ldy bsTemp2             ; and Y
+    ;lda #BS_CMD_SEND_SCREEN ; Restore A (BS_CMD_SEND_SCREEN)
 .doRTS
     rts                     ; Return (default return used by all vectors to start with)
 .doRTI
@@ -197,7 +189,65 @@ soundTemp = &64
     lda #BS_CMD_SEND_USER1
     rts
     ; Sends a block of sample data to be written to the fifo buffer
-.bagiEnd
+.extraEnd
 
     ; Save the extra code for BAGI
-SAVE "bagiCode.bin",&900,bagiEnd
+SAVE "extraCode.bin",&900,extraEnd
+
+CLEAR &C00,&CFF
+
+ORG &c00
+
+    jsr setupEnvPi
+    jmp OSWRCH
+
+    jmp doRTSPi
+    jmp doRTSPi
+    jmp doRTSPi
+    jmp doRTIPi
+
+.doRTSPi
+    rts
+.doRTIPi
+    lda &FC
+    rti
+
+.piWRCH
+    CMP #&FF
+    BNE continue
+    LDA #19
+    JSR OSBYTE
+    STA HOST_TUBE_R1DATA
+    LDA #&FF
+    rts
+
+.irqPi
+	LDA &FE4D:AND #2:BEQ checkTimerPi ; VSync timer?
+    jsr vsyncV              ; If so then call the vsync vector
+    inc bsFrameCount        ; Increment our frame counter
+.irqReturnPi
+    jmp &0000               ; Then jump to the original IRQ routine
+oldIRQPi = irqReturnPi+1
+.checkTimerPi
+    BIT &FE6D:BVC irqReturnPi ; Timer interrupt?
+    jmp timerV              ; Call our timer interrupt vector
+
+.setupEnvPi
+    pha                         ; Store A
+    lda #0                      ; Initialise the palette counter
+    sta bsPalCount              
+    lda #LO(piWRCH)            ; Get the proper address for OSWRCH (note the top byte wont change)
+    sta WRCHV       
+	SEI                         ; Disable interrupts
+	LDA #&82:STA &FE4E			; enable VSync and timer interrupt
+    lda #&c0:STA &FE6E
+	lda &204:sta oldIRQPi
+	lda &205:sta oldIRQPi+1		; Store old IRQ vector
+	LDA #LO(irqPi):STA &204
+	LDA #HI(irqPi):STA &205		; set interrupt handler
+	CLI                         ; Enable interrupts again
+    pla                         ; Restore A
+	rts                         ; Return (takes us back to the original OSWRCH vector since we JSR'd here)
+.endPi
+
+SAVE "piCode.bin",&C00,endPi

@@ -20,6 +20,7 @@
         .global _OS_ReadLine
         .global _OS_CLI
         .global _OS_MMUControl
+        .global _OS_ReadVduVariables
         .global _VDU
         
         .extern  main
@@ -46,6 +47,8 @@
         OS_ReadLine             = 0x0E
         OS_CLI                  = 0x05
         OS_MMUControl           = 0x6b
+        OS_ReadVduVariables     = 0x31
+
 
         USRStackSize            = 32768
         V_bit                   = 1 << 28
@@ -131,6 +134,8 @@ _swi:
         BEQ     _OS_CLI
         CMP     r12, #OS_MMUControl
         BEQ     _OS_MMUControl
+        CMP     r12, #OS_ReadVduVariables
+        BEQ     _OS_ReadVduVariables
 
         CMP     r12, #OS_WriteI
         BGE     _OS_WriteI
@@ -247,21 +252,29 @@ _OS_ReadC:
 	SWI OS_ReadC
 	B swret
 _OS_ReadLine:
-        SWI OS_ReadLine
-        B swret
+     SWI OS_ReadLine
+     B swret
 _OS_CLI:
-        SWI OS_CLI
-        B swret
+     STMFD r13!,{lr}
+     SWI OS_CLI
+     LDMFD r13!,{lr}
+     B swret
+     
 _OS_WriteI:
-        CMP r12, #0x200
-        BGE unswi
-        SUB r0,r12,#0x100
+     CMP r12, #0x200
+     BGE unswi
+     SUB r0,r12,#0x100
 	SWI OS_WriteC
-	B swret
+        B swret
+
+_OS_ReadVduVariables:
+     SWI OS_ReadVduVariables
+     B swret
+
 _VDU:
      SWI OS_WriteC
      MOV pc, lr
 
 _OS_MMUControl:
-        SWI OS_MMUControl
-        B swret
+     SWI OS_MMUControl
+     B swret

@@ -27,17 +27,22 @@ int mouse_x;
 int mouse_y;
 int mouse_b;
 int old_mouse_b = 0;
+extern qboolean usePi;
 
 extern void IN_MLookDown();
 
 void CenterMouse()
 {
     // Write to the host's memory at the location used to store the mouse coordinate
-    _VDU(BS_CMD_SEND_USER1);
-    // WriteByteToIo((void*)0xda6,0x80);
-    // WriteByteToIo((void*)0xda7,0x02);
-    // WriteByteToIo((void*)0xda8,0x00);
-    // WriteByteToIo((void*)0xda9,0x02);
+    if (usePi)
+    {
+        WriteByteToIo((void*)0xda6,0x80);
+        WriteByteToIo((void*)0xda7,0x02);
+        WriteByteToIo((void*)0xda8,0x00);
+        WriteByteToIo((void*)0xda9,0x02);
+    }
+    else
+        _VDU(BS_CMD_SEND_USER1);
 }
 
 void IN_Init (void)
@@ -57,7 +62,7 @@ void IN_Commands (void)
 {
     int x,y;
     beebScreen_GetMouse(&x, &y, &mouse_b);
-    Con_DPrintf("Mouse: %d,%d,%d\n",x, y, mouse_b);
+    // Con_DPrintf("Mouse: %d,%d,%d\n",x, y, mouse_b);
     
     int mouse_b_delta = mouse_b ^ old_mouse_b;
     if (mouse_b_delta & 1)

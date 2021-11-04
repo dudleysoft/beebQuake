@@ -40,9 +40,15 @@ void (*palExtractor)(int v,int *r,int *g,int *b) = beebScreen_extractBGR888;
 
 int nulaPal[16];
 int beebPal[256 + 16];
-int palMap[256];
+unsigned char palMap[256];
 qboolean useNula = false;
+qboolean useHdmi = false;
+qboolean usePi = false;
 qboolean isGreyscale = false;
+
+#define GET_R(v) ((v) & 0x000f)
+#define GET_G(v) (((v)>> 12) & 0x000f)
+#define GET_B(v) (((v)>> 8) & 0x000f)
 
 #include "beebScreen/bagiCode.c"
 
@@ -94,9 +100,28 @@ int partitionColor(int pal)
 	return r+g+b;
 }
 
-#define GET_R(v) ((v) & 0x000f)
-#define GET_G(v) (((v)>> 12) & 0x000f)
-#define GET_B(v) (((v)>> 8) & 0x000f)
+int calculateBrightness()
+{
+	int counts[256];
+	memset(counts,0,sizeof(counts));
+
+	int total = 0;
+
+	for(int i=0;i<BASEWIDTH * BASEHEIGHT; ++i)
+	{
+		counts[palMap[vid_buffer[i]]]++;
+	}
+
+	for(int i=0;i<256;++i)
+	{
+		if (counts[i])
+		{
+			int b = GET_R(beebPal[i]) * 3 + GET_G(beebPal[i]) * 5 + GET_B(beebPal[i]);
+			total += b * counts[i];
+		}
+	}
+	return total / (BASEWIDTH * BASEHEIGHT);
+}
 
 void	VID_SetPalette (unsigned char *palette)
 {
@@ -110,20 +135,20 @@ void	VID_SetPalette (unsigned char *palette)
 		tempPal[i]=(beebGamma[palette[0]]<<16)+(beebGamma[palette[1]]<<8)+(beebGamma[palette[2]]);
 		palette+=3;
 	}
-	beebScreen_SetNulaPal(tempPal,beebPal,256,palExtractor);
+	beebScreen_SetNulaPal(tempPal, beebPal, 256, palExtractor);
 	setPal = true;
 	if (useNula)
 	{
-		beebScreen_CreatePalMap(beebPal,256,palMap);
+		beebScreen_CreatePalMap(beebPal, 256, palMap);
 
 		if (isGreyscale)
 		{
-			beebScreen_CreateRemapColours(beebPal,greyPal,16,256);
+			beebScreen_CreateRemapColours(beebPal, greyPal, 16, 256);
 		}
 	}
 	else
 	{
-		beebScreen_SendPal(beebPal,256);
+		beebScreen_SendPal(beebPal, 256);
 	}
 }
 
@@ -161,6 +186,17 @@ void	VID_Init (unsigned char *palette)
 		useNula = true;
 	}
 
+	if (COM_CheckParm("-pi"))
+	{
+		usePi = true;
+	}
+
+	if (COM_CheckParm("-hdmi"))
+	{
+		useHdmi = true;
+		useNula = true;
+	}
+
 	if (COM_CheckParm("-grey"))
 	{
 		isGreyscale = true;
@@ -185,9 +221,18 @@ void	VID_Init (unsigned char *palette)
 		flags &= ~BS_INIT_MOUSE;
 	}
 
-	if (useNula)
+	if (useHdmi)
+	{
+		flags |= BS_INIT_RGB2HDMI;
+	}
+	else if (useNula)
 	{
 		flags |= BS_INIT_NULA;
+	}
+	else if (usePi)
+	{
+		flags |= BS_INIT_PIVDU;
+		flags &= ~BS_INIT_DOUBLE_BUFFER;
 	}
 
 	qboolean initVid = true;
@@ -199,20 +244,30 @@ void	VID_Init (unsigned char *palette)
 
 	if (initVid)
 	{
-		beebScreen_Init(2, flags);
+		beebScreen_Init(usePi ? 13 : 2, flags);
 
 		bsInit = true;
 
-		beebScreen_SetGeometry(128,192,TRUE);
+		if (usePi)
+		{
+			beebScreen_SetGeometry(320,200,TRUE);
+		}
+		else
+		{
+			beebScreen_SetGeometry(128,192,TRUE);
+		}
 
 		beebScreen_SetBuffer(vid_buffer,BS_BUFFER_FORMAT_8BPP, BASEWIDTH, BASEHEIGHT);
 
-		beebScreen_UseDefaultScreenBases();
+		if (!usePi)
+		{
+			beebScreen_UseDefaultScreenBases();
 
-		// Clear any unused screen memory (this is slow :'( )
-		beebScreen_ClearScreens();
+			// Clear any unused screen memory (this is slow :'( )
+			beebScreen_ClearScreens(true);
+		}
 
-		if (flags & BS_INIT_MOUSE)
+		if (flags & BS_INIT_MOUSE && !usePi)
 		{
 			beebScreen_InjectCode(bagiCode_bin,bagiCode_bin_len,0x900);
 			beebScreen_SetUserVector(BS_VECTOR_USER1,0x900);
@@ -245,11 +300,45 @@ void	VID_Shutdown (void)
 	}
 }
 
+void rescalePal(int* inPal,int *outPal,int gamma)
+{
+	for(int i =0;i<256;++i)
+	{
+		int r=GET_R(inPal[i]) * gamma;
+		int g=GET_G(inPal[i]) * gamma;
+		int b=GET_B(inPal[i]) * gamma;
+		if (r > 127)
+		{
+			r=127;
+		}
+		if (g > 127)
+		{
+			g=127;
+		}
+		if (b > 127)
+		{
+			b= 127;
+		}
+
+		outPal[i]=MAPRGB(r>>3,g>>3,b>>3);
+	}
+}
+
+int gammaTab[]={20,18,16,15,14,13,13,12,11,11,10,9,8,8,8};
+
 void	VID_Update (vrect_t *rects)
 {
 	if (useNula && !isGreyscale)
 	{
 		beebScreen_CreateDynamicPalette(beebPal,palMap,256,nulaPal,16);
+	}
+	if (!useNula && !usePi)
+	{
+		// TODO - Dynamic brightness
+		int averageBright = calculateBrightness();
+		int newPal[256];
+		rescalePal(beebPal, newPal, gammaTab[averageBright>>4]);
+		beebScreen_SendPal(newPal,256);
 	}
 
 	beebScreen_Flip();
