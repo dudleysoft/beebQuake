@@ -6,10 +6,12 @@ make.exe all --print-data-base --no-builtin-variables --no-builtin-rules --quest
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Thu Nov 04 19:08:53 2021
+# Make data base, printed on Mon Jul 04 15:17:16 2022
 
 # Variables
 
+# environment
+FPS_BROWSER_APP_PROFILE_STRING = Internet Explorer
 # environment
 SYSTEMDRIVE = C:
 # environment
@@ -19,14 +21,16 @@ OCULUSBASE = C:\Program Files\Oculus\
 # environment
 USERPROFILE = C:\Users\dudle
 # environment
+VBOX_MSI_INSTALL_PATH = C:\Program Files\Oracle\VirtualBox\
+# environment
 LOCALAPPDATA = C:\Users\dudle\AppData\Local
 # environment
-VSCODE_IPC_HOOK_EXTHOST = \\.\pipe\vscode-ipc-317b53d4-b68a-4bc6-a036-e37b1c1edb33-sock
+VSCODE_IPC_HOOK_EXTHOST = \\.\pipe\vscode-ipc-fb56b64d-4e65-4af0-9688-974cb69510d 
+f-sock
 # environment
 VSCODE_CWD = C:\Users\dudle\AppData\Local\Programs\Microsoft VS Code
 # environment
-CHOCOLATEYINSTALL = C:\ProgramData\ 
-chocolatey
+CHOCOLATEYINSTALL = C:\ProgramData\chocolatey
 # environment
 SYSTEMROOT = C:\WINDOWS
 # environment
@@ -40,7 +44,11 @@ MAKE_COMMAND := C:/ProgramData/chocolatey/lib/make/tools/install/bin/make.exe
 # makefile (from 'Makefile', line 22)
 DO_DEBUG_CC = $(CC) $(CFLAGS) -o $@ -c $<
 # environment
-CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_22804_PVERDCVELMCWJRLK
+LUA_DEV = C:\Program Files (x86)\Lua\5.1
+# environment
+CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_4368_VYPKQUGZFRDRCOSP
+# environment
+FPS_BROWSER_USER_PROFILE_STRING = Default
 # environment
 VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # default
@@ -56,7 +64,7 @@ VSCODE_LOG_STACK = false
 # automatic
 %F = $(notdir $%)
 # environment
-VSCODE_CODE_CACHE_PATH = C:\Users\dudle\AppData\Roaming\Code\CachedData\6cba118ac49a1b88332f312a8f67186f7f3c1643
+VSCODE_CODE_CACHE_PATH = C:\Users\dudle\AppData\Roaming\Code\CachedData\30d9c6cd9483b2cc586687151bcbcd635f373630
 # environment
 LANG = C
 # default
@@ -76,7 +84,7 @@ CURDIR := d:/Beeb/BeebQuake
 # environment
 VSCODE_PIPE_LOGGING = true
 # environment
-APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
 # automatic
 *D = $(patsubst %/,%,$(patsubst %\,%,$(dir $*)))
 # environment
@@ -96,11 +104,13 @@ MAKEFILE_LIST := Makefile
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
-VSCODE_PID = 22804
+VSCODE_PID = 4368
 # automatic
 ?D = $(patsubst %/,%,$(patsubst %\,%,$(dir $?)))
 # automatic
 *F = $(notdir $*)
+# environment
+LUA_PATH = ;;C:\Program Files (x86)\Lua\5.1\lua\?.luac
 # automatic
 <D = $(patsubst %/,%,$(patsubst %\,%,$(dir $<)))
 # environment
@@ -130,7 +140,7 @@ MAKELEVEL := 0
 # default
 MAKE = $(MAKE_COMMAND)
 # environment
-PATH = C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files\ImageMagick-7.0.10-Q16-HDRI;C:\Program Files\Oculus\Support\oculus-runtime;C:\Python39\Scripts\;C:\Python39\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\ProgramData\chocolatey\bin;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\nodejs\;c:\cygwin64\bin;C:\Program Files\Git\cmd;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Program Files\CodeAndWeb\TexturePacker\bin;C:\Program Files (x86)\QuickTime\QTSystem\;C:\Program Files\CMake\bin;C:\Program Files\Git LFS;C:\Program Files\PuTTY\;C:\Program Files\doxygen\bin;;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2020-q4-major\bin;C:\Users\dudle\AppData\Local\Microsoft\WindowsApps;C:\Users\dudle\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\dudle\AppData\Roaming\npm;D:\gbdk\bin;D:\Beeb\vbcc\bin;
+PATH = C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files\ImageMagick-7.0.10-Q16-HDRI;C:\Program Files\Oculus\Support\oculus-runtime;C:\Python27\Scripts\;C:\Python27\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\ProgramData\chocolatey\bin;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;c:\cygwin64\bin;C:\Program Files\Git\cmd;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Program Files\CodeAndWeb\TexturePacker\bin;C:\Program Files (x86)\QuickTime\QTSystem\;C:\Program Files\CMake\bin;C:\Program Files\Git LFS;C:\Program Files\PuTTY\;C:\Program Files\doxygen\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\Lua\5.1;C:\Program Files (x86)\Lua\5.1\clibs;C:\Program Files\dotnet\;C:\Program Files\nodejs\;C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2020-q4-major\bin;C:\Users\dudle\AppData\Local\Microsoft\WindowsApps;C:\Users\dudle\AppData\Local\Programs\Microsoft VS Code\bin;D:\gbdk\bin;D:\Beeb\vbcc\bin;C:\Users\dudle\AppData\Roaming\npm;
 # environment
 COMPUTERNAME = DESKTOP-5ATHJNK
 # default
@@ -156,7 +166,7 @@ COMMONPROGRAMFILES = C:\Program Files (x86)\Common Files
 # environment
 PROGRAMW6432 = C:\Program Files
 # environment
-PATHEXT = .COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.PY;.PYW
+PATHEXT = .COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.PY;.PYW;.wlua;.lexe
 # automatic
 +F = $(notdir $+)
 # environment
@@ -168,9 +178,9 @@ GNUMAKEFLAGS :=
 # environment
 GIT_LFS_PATH = C:\Program Files\Git LFS
 # environment
-OS = Windows_NT
+VS140COMNTOOLS = C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\Tools\
 # environment
-__COMPAT_LAYER = DetectorsShimLog
+OS = Windows_NT
 # makefile
 .DEFAULT_GOAL := build_release
 # makefile (from 'Makefile', line 15)
@@ -204,7 +214,7 @@ HOMEDRIVE = C:
 # environment
 PROCESSOR_ARCHITECTURE = x86
 # environment
-VSCODE_AMD_ENTRYPOINT = vs/workbench/services/extensions/node/extensionHostProcess
+VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 # environment
 COMMONPROGRAMFILES(X86) = C:\Program Files (x86)\Common Files
 # makefile (from 'Makefile', line 42)
@@ -214,7 +224,7 @@ ELECTRON_RUN_AS_NODE = 1
 # environment
 TEMP = C:\Users\dudle\AppData\Local\Temp
 # environment
-VSCODE_IPC_HOOK = \\.\pipe\c92adc0de03cace00f1934fa490e8cc4-1.61.2-main-sock
+VSCODE_IPC_HOOK = \\.\pipe\c92adc0de03cace00f1934fa490e8cc4-1.68.1-main-sock
 # default
 .RECIPEPREFIX := 
 # automatic
@@ -224,11 +234,14 @@ CWRSYNC_HOME = C:\ProgramData\chocolatey\lib\rsync\cwrsync_5.5.0_x86_free
 # default
 SUFFIXES := 
 # environment
-ALLUSERSPROFILE = C:\ProgramData
+ALLUSERSP 
+ROFILE = C:\ProgramData
 # makefile (from 'Makefile', line 13)
 LD = arm-none-eabi-gcc
 # environment
 SESSIONNAME = Console
+# environment
+OPENSSL_IA32CAP = :~0x20000000
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell nocomment grouped-target extra-prereqs archives jobserver output-sync load
 # environment
@@ -236,14 +249,13 @@ PROCESSOR_REVISION = 7100
 # makefile (from 'Makefile', line 12)
 CC = arm-none-eabi-gcc
 # makefile (from 'Makefile', line 9)
-BUILDDIR =  
-.
+BUILDDIR = .
 # makefile (from 'Makefile', line 14)
 OBJCOPY = arm-none-eabi-objcopy
 # environment
 PROCESSOR_IDENTIFIER = AMD64 Family 23 Model 113 Stepping 0, AuthenticAMD
 # variable set hash-table stats:
-# Load=115/1024=11%, Rehash=0, Collisions=10/375=3%
+# Load=121/1024=12%, Rehash=0, Collisions=11/381=3%
 
 # Pattern-specific Variable Values
 
@@ -251,15 +263,14 @@ PROCESSOR_IDENTIFIER = AMD64 Family 23 Model 113 Stepping 0, AuthenticAMD
 
 # Directories
 
-# . (key d:/Beeb/BeebQuake, mtime 1635606494): 296 files, no impossibilities.
+# . (key d:/Beeb/BeebQuake, mtime 1646220044): 295 files, no impossibilities.
 
-# 296 files, no impossibilities in 1 directories.
+# 295 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
 %.o: %.c
-#  recipe to execu 
-te (from 'Makefile', line 123):
+#  recipe to execute (from 'Makefile', line 123):
 	$(CC) $(CFLAGS) -c $< -o $@
 
 %.o: %.s
@@ -445,7 +456,8 @@ quake/r_main.o: r_main.c
 
 # Not a target:
 cd_linux.c:
-#  Implicit rule search has not been done.
+#  Implicit rule search 
+ has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
@@ -481,8 +493,7 @@ quake/r_vars.o: r_vars.c
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to exe 
-cute (from 'Makefile', line 374):
+#  recipe to execute (from 'Makefile', line 374):
 	$(DO_CC)
 
 # Not a target:
@@ -592,7 +603,7 @@ quake/d_sky.o: d_sky.c
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2021-06-03 10:08:43
+#  Last modified 2021-06-03 11:08:43
 #  File has been updated.
 #  Successfully updated.
 
@@ -657,6 +668,7 @@ build_release:
 #  File has been updated.
 #  Needs to be updated (-q is set).
 # automatic
+ 
 # @ := build_release
 # automatic
 # * := 
@@ -704,8 +716,7 @@ r_part.c:
 #  Modification time never checked.
 #  File has not been updated.
 
-quake/d_fill.o: 
- d_fill.c
+quake/d_fill.o: d_fill.c
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -837,7 +848,8 @@ quake/net_none.o: net_none.c
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 242):
+#  recipe to execute (from 'Makefile', line 2 
+42):
 	$(DO_CC)
 
 # Not a target:
@@ -978,8 +990,7 @@ r_misc.c:
 .DEFAULT:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
-#  File has not been updated 
-.
+#  File has not been updated.
 
 quake/pr_cmds.o: pr_cmds.c
 #  Implicit rule search has not been done.
@@ -1039,7 +1050,8 @@ quake/cl_input.o: cl_input.c
 quake/chase.o: chase.c
 #  Implicit rule search has not been done.
 #  Modification time never checked.
-#  File has not been updated.
+#  File has  
+not been updated.
 #  recipe to execute (from 'Makefile', line 158):
 	$(DO_CC)
 
@@ -1252,9 +1264,9 @@ quake/in_beeb.o: in_beeb.c
 
 # Not a target:
 d_fill.c:
-#  Implicit rule search has not been do 
-ne.
-#  Modification time never checked.
+#  Implicit rule search has not been done.
+#  Modifica 
+tion time never checked.
 #  File has not been updated.
 
 quake/snd_mix.o: snd_mix.c
@@ -1385,8 +1397,8 @@ pr_cmds.c:
 #  Modification time never checked.
 #  File has not been updated.
 
-bquake: quake/cl_demo.o quake/cl_input.o quake/cl_main.o quake/cl_parse.o quake/cl_tent.o quake/chase.o quake/cmd.o quake/common.o quake/console.o quake/crc.o quake/cvar.o quake/draw.o quake/d_edge.o quake/d_fill.o quake/d_init.o quake/d_modech.o quake/d_part.o quake/d_polyse.o quake/d_scan.o quake/d_sky.o quake/d_sprite.o quake/d_surf.o quake/d_vars.o quake/d_zpoint.o quake/host.o quake/host_cmd.o quake/keys.o quake/menu.o quake/mathlib.o quake/model.o quake/net_loop.o quake/net_main.o quake/net_vcr.o quake/net_none.o quake/nonintel.o quake/pr_cmds.o quake/pr_edict.o quake/pr_exec.o quake/r_aclip.o quake/r_alias.o quake/r_bsp.o quake/r_light.o quake/r_draw.o quake/r_efrag.o quake/r_edge.o quake/r_misc.o quake/r_main.o quake/r_sky.o quake/r_sprite.o quak 
-e/r_surf.o quake/r_part.o quake/r_vars.o quake/screen.o quake/sbar.o quake/sv_main.o quake/sv_phys.o quake/sv_move.o quake/sv_user.o quake/zone.o quake/view.o quake/wad.o quake/world.o quake/cd_null.o quake/sys_beeb.o quake/vid_beeb.o quake/snd_mem.o quake/snd_mix.o quake/snd_null.o quake/in_beeb.o armc-start.o armtubeio.o armtubeswis.o beebScreen/beebScreen.o audio.o
+bquake: quake/cl_demo.o quake/cl_input.o quake/cl_main.o quake/cl_parse.o quake/cl_tent.o quake/chase.o quake/cmd.o quake/common.o quake/console.o quake/crc.o quake/cvar.o quake/draw.o quake/d_edge.o quake/d_fill.o quake/d_init.o quake/d_modech.o quake/d_part.o quake/d_polyse.o quake/d_scan.o quake/d_sky.o quake/d_sprite.o quake/d_surf.o quake/d_vars.o quake/d_zpoint.o quake/host.o quake/host_cmd.o quake/keys.o quake/menu.o quake/mathlib.o quake/model.o quake/net_loop.o quake/net_main.o quake/net_vcr.o quake/net_none.o quake/nonintel.o quake/pr_cmds.o quake/pr_edict.o quake/pr_exec.o quake/r_aclip.o quake/r_alias.o quake/r_bsp.o quake/r_light.o quake/r_draw.o quake/r_efrag.o quake/r_edge.o quake/r_misc.o quake/r_main.o quake/r_sky.o quake/r_sprite.o quake/r_surf.o quak 
+e/r_part.o quake/r_vars.o quake/screen.o quake/sbar.o quake/sv_main.o quake/sv_phys.o quake/sv_move.o quake/sv_user.o quake/zone.o quake/view.o quake/wad.o quake/world.o quake/cd_null.o quake/sys_beeb.o quake/vid_beeb.o quake/snd_mem.o quake/snd_mix.o quake/snd_null.o quake/in_beeb.o armc-start.o armtubeio.o armtubeswis.o beebScreen/beebScreen.o audio.o
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -1468,12 +1480,12 @@ quake/d_scan.o: d_scan.c
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 394 / storage = 4427 B / avg = 11 B
-# current buf: size = 8174 B / used = 4427 B / count = 394 / avg = 11 B
+# strcache buffers: 1 (0) / strings = 393 / storage = 4416 B / avg = 11 B
+# current buf: size = 8174 B / used = 4416 B / count = 393 / avg = 11 B
 
-# strcache performance: lookups = 654 / hit rate = 39%
+# strcache performance: lookups = 653 / hit rate = 39%
 # hash-table stats:
-# Load=394/8192=5%, Rehash=0, Collisions=21/654=3%
-# Finished Make data base on Thu Nov 04 19:08:53 2021
+# Load=393/8192=5%, Rehash=0, Collisions=21/653=3%
+# Finished Make data base on Mon Jul 04 15:17:16 2022
 
  

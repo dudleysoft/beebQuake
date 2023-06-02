@@ -224,26 +224,28 @@ int __appentry()
   int flags = 0;
   _kernel_oserror *errptr;
     char *args;
-    char commandline[128];
+    char commandline[256];
     UINT32 ioAddress;
     UINT32 maxmem;
     long long starttime = 0;
 
     // Read the command-line address from the io processor
     //    _swi(OS_Args, _INR(0,2)|_OUT(2), 1, 0, 0, &ioAddress);
-    errptr = _swix(OS_Args, _INR(0,2)|_OUT(2), 1, 0, 0, &ioAddress);
-    // We want all of the command-line so back up to the
-    // nearest page (0x700 on B and B+ and 0xDC00 on a master)
-    ioAddress = (ioAddress / 256) * 256;
-    // copy the memory over from the io processor to the ARM
-    memcpyfromio_slow(commandline, (void*)ioAddress, sizeof(commandline));
+    // errptr = _swix(OS_Args, _INR(0,2)|_OUT(2), 1, 0, 0, &ioAddress);
+    // // We want all of the command-line so back up to the
+    // // nearest page (0x700 on B and B+ and 0xDC00 on a master)
+    // ioAddress = (ioAddress / 256) * 256;
+    // // copy the memory over from the io processor to the ARM
+    // memcpyfromio_slow(commandline, (void*)ioAddress, sizeof(commandline));
+    _swi(OS_GetEnv,_IN(0)|_OUT(0),0,&ioAddress);
+    strncpy(commandline,ioAddress,255);
 
     args = commandline;
     int nchar = 0;
     int narg = 1;
     argvec[0] = args;
 
-    while (args[nchar] != 0 && args[nchar] != '\r' && args[nchar] != '\n' && nchar < 128)
+    while (args[nchar] != 0 && args[nchar] != '\r' && args[nchar] != '\n' && nchar < 256)
     {
         if (args[nchar] == ' ')
         {
